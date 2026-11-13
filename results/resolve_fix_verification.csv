@@ -1,0 +1,9 @@
+instance,n_customers,bks,distance,gap_pct,replan_count,exact_bks,within_tolerance
+P-n16-k8,15,450.0,450.0,0.0,8,True,True
+P-n20-k2,19,216.0,216.0,0.0,7,True,True
+E-n22-k4,21,375.0,375.0,0.0,9,True,True
+E-n23-k3,22,569.0,570.0,0.1757,9,False,True
+A-n32-k5,31,784.0,784.0,0.0,12,True,True
+A-n33-k5,32,661.0,661.0,0.0,13,True,True
+B-n31-k5,30,672.0,672.0,0.0,12,True,True
+A-n45-k6,44,944.0,983.0,4.1314,17,False,False

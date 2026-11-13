@@ -1,0 +1,27 @@
+{
+  "train": [
+    "TP. Thủ Đức",
+    "Tân Bình",
+    "Bình Thạnh",
+    "Gò Vấp",
+    "Quận 10",
+    "Quận 12",
+    "Bình Tân",
+    "Tân Phú",
+    "Hóc Môn",
+    "Bình Chánh",
+    "Nhà Bè",
+    "Củ Chi"
+  ],
+  "val": [
+    "Quận 3",
+    "Quận 4",
+    "Quận 8"
+  ],
+  "test": [
+    "Quận 1",
+    "Quận 5",
+    "Quận 7",
+    "Quận 11"
+  ]
+}

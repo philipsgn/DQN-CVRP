@@ -1,0 +1,38 @@
+{
+  "name": "HCMC-District-20",
+  "comment": "CVRP Instance với 20 điểm giao hàng thực tế tại TP. Hồ Chí Minh, Depot tại Đại học FPT TP.HCM (Khu CNC, TP. Thủ Đức)",
+  "capacity": 30,
+  "max_vehicles": 6,
+  "depot": {
+    "id": 0,
+    "name": "Kho Trung Tâm - Đại học FPT TP.HCM",
+    "district": "TP. Thủ Đức",
+    "ward": "Phường Long Thạnh Mỹ",
+    "address": "Lô E2a-7, Đường D1, Khu Công nghệ cao, TP. Thủ Đức",
+    "lat": 10.8415,
+    "lng": 106.8098,
+    "demand": 0
+  },
+  "customers": [
+    {"id": 1, "name": "Chợ Bến Thành", "district": "Quận 1", "ward": "Phường Bến Thành", "address": "Đường Lê Lợi, Quận 1", "lat": 10.7725, "lng": 106.6980, "demand": 4},
+    {"id": 2, "name": "Nhà thờ Đức Bà", "district": "Quận 1", "ward": "Phường Bến Nghé", "address": "Số 1 Công xã Paris, Quận 1", "lat": 10.7798, "lng": 106.6990, "demand": 3},
+    {"id": 3, "name": "Chợ Tân Định", "district": "Quận 1", "ward": "Phường Tân Định", "address": "336 Hai Bà Trưng, Quận 1", "lat": 10.7903, "lng": 106.6896, "demand": 5},
+    {"id": 4, "name": "Hồ Con Rùa", "district": "Quận 3", "ward": "Phường Võ Thị Sáu", "address": "Vòng xoay Công Trường Quốc Tế, Quận 3", "lat": 10.7828, "lng": 106.6958, "demand": 2},
+    {"id": 5, "name": "Bảo tàng Chứng tích Chiến tranh", "district": "Quận 3", "ward": "Phường Võ Thị Sáu", "address": "28 Võ Văn Tần, Quận 3", "lat": 10.7794, "lng": 106.6922, "demand": 4},
+    {"id": 6, "name": "Chợ Lớn (Bình Tây)", "district": "Quận 5", "ward": "Phường 2", "address": "Tháp Mười, Quận 5", "lat": 10.7497, "lng": 106.6521, "demand": 6},
+    {"id": 7, "name": "Bệnh viện Chợ Rẫy", "district": "Quận 5", "ward": "Phường 12", "address": "201B Nguyễn Chí Thanh, Quận 5", "lat": 10.7577, "lng": 106.6596, "demand": 5},
+    {"id": 8, "name": "Vạn Hạnh Mall", "district": "Quận 10", "ward": "Phường 12", "address": "11 Sư Vạn Hạnh, Quận 10", "lat": 10.7712, "lng": 106.6698, "demand": 7},
+    {"id": 9, "name": "Crescent Mall Phú Mỹ Hưng", "district": "Quận 7", "ward": "Phường Tân Phú", "address": "101 Tôn Dật Tiên, Quận 7", "lat": 10.7289, "lng": 106.7219, "demand": 6},
+    {"id": 10, "name": "SC VivoCity", "district": "Quận 7", "ward": "Phường Tân Phong", "address": "1058 Nguyễn Văn Linh, Quận 7", "lat": 10.7327, "lng": 106.7058, "demand": 4},
+    {"id": 11, "name": "Landmark 81 - Vinhomes", "district": "Quận Bình Thạnh", "ward": "Phường 22", "address": "720A Điện Biên Phủ, Bình Thạnh", "lat": 10.7951, "lng": 106.7218, "demand": 5},
+    {"id": 12, "name": "Ngã tư Hàng Xanh", "district": "Quận Bình Thạnh", "ward": "Phường 21", "address": "Vòng xoay Hàng Xanh, Bình Thạnh", "lat": 10.8016, "lng": 106.7115, "demand": 3},
+    {"id": 13, "name": "Chợ Thủ Đức", "district": "TP. Thủ Đức", "ward": "Phường Trường Thọ", "address": "Đường Kha Vạn Cân, TP. Thủ Đức", "lat": 10.8524, "lng": 106.7584, "demand": 5},
+    {"id": 14, "name": "Khu đô thị Sala", "district": "TP. Thủ Đức", "ward": "Phường An Lợi Đông", "address": "Mai Chí Thọ, TP. Thủ Đức", "lat": 10.7716, "lng": 106.7202, "demand": 4},
+    {"id": 15, "name": "Thảo Điền", "district": "TP. Thủ Đức", "ward": "Phường Thảo Điền", "address": "Đường Xuân Thủy, TP. Thủ Đức", "lat": 10.8037, "lng": 106.7369, "demand": 3},
+    {"id": 16, "name": "Ngã tư Phú Nhuận", "district": "Quận Phú Nhuận", "ward": "Phường 1", "address": "Phan Đăng Lưu - Hoàng Văn Thụ, Phú Nhuận", "lat": 10.7997, "lng": 106.6811, "demand": 4},
+    {"id": 17, "name": "Công viên Gia Định", "district": "Quận Gò Vấp", "ward": "Phường 3", "address": "Hoàng Minh Giám, Gò Vấp", "lat": 10.8142, "lng": 106.6781, "demand": 5},
+    {"id": 18, "name": "Sân bay Tân Sơn Nhất", "district": "Quận Tân Bình", "ward": "Phường 2", "address": "Trường Sơn, Tân Bình", "lat": 10.8185, "lng": 106.6588, "demand": 6},
+    {"id": 19, "name": "AEON Mall Tân Phú", "district": "Quận Tân Phú", "ward": "Phường Sơn Kỳ", "address": "30 Bờ Bao Tân Thắng, Tân Phú", "lat": 10.8009, "lng": 106.6178, "demand": 7},
+    {"id": 20, "name": "AEON Mall Bình Tân", "district": "Quận Bình Tân", "ward": "Phường An Lạc A", "address": "Số 1 Đường Số 17A, Bình Tân", "lat": 10.7436, "lng": 106.6127, "demand": 6}
+  ]
+}

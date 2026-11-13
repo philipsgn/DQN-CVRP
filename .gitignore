@@ -1,0 +1,84 @@
+# ============================================
+# Dynamic VRP with Deep Reinforcement Learning
+# Git Ignore Configuration
+# ============================================
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python packaging files
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# uv / Python environment
+.python-version
+
+# Pytest
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE / Editor files
+.vscode/
+.idea/
+.commandcode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+~*
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Trained model checkpoints
+# These can be regenerated from the experiment scripts
+*.pt
+*.pth
+*.ckpt
+!models/*.pt
+
+# Local training artefacts
+results/training/
+
+# ============================================
+# IMPORTANT: Keep research outputs
+# ============================================
+# Do NOT ignore:
+# - results/tables/
+# - results/figures/
+# - benchmark datasets
+# - experiment configuration
+# - uv.lock
+#
+# These are retained for research reproducibility.

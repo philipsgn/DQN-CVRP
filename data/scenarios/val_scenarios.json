@@ -1,0 +1,5733 @@
+{
+  "version": "1.0",
+  "count": 30,
+  "scenarios": [
+    {
+      "scenario_id": "SCEN_VAL_001",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 50,
+      "k_available": 8,
+      "total_demand_kg": 272.0,
+      "k_min_by_weight": 6,
+      "stores": [
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 42.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0198",
+          "name": "Đồ gia dụng Hoàng Gia - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000217
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000082
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_002",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 12,
+      "total_demand_kg": 414.0,
+      "k_min_by_weight": 11,
+      "stores": [
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0073",
+          "name": "Nông sản Việt - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000092
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000057
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0085",
+          "name": "Co.opmart - Tôn Đản",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000104
+        },
+        {
+          "id": "S0054",
+          "name": "GS25 - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000073
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000215
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000203
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_003",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 50,
+      "k_available": 8,
+      "total_demand_kg": 296.0,
+      "k_min_by_weight": 6,
+      "stores": [
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0187",
+          "name": "Bách Hóa Xanh mini - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000206
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0179",
+          "name": "GS25 - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000198
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000062
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_004",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 80,
+      "k_available": 9,
+      "total_demand_kg": 570.0,
+      "k_min_by_weight": 8,
+      "stores": [
+        {
+          "id": "S0061",
+          "name": "Nông sản Việt - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000080
+        },
+        {
+          "id": "S0055",
+          "name": "Tạp hóa Cô Lan - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000074
+        },
+        {
+          "id": "S0083",
+          "name": "Emart - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000102
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0036",
+          "name": "An Khang - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000055
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000057
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0180",
+          "name": "Tạp hóa Minh Tâm - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000199
+        },
+        {
+          "id": "S0177",
+          "name": "Lotte Mart - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000196
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0197",
+          "name": "Bách Hóa Xanh - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000216
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0187",
+          "name": "Bách Hóa Xanh mini - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000206
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0070",
+          "name": "Emart - Khánh Hội",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000089
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000215
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000097
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_005",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 80,
+      "k_available": 6,
+      "total_demand_kg": 185.0,
+      "k_min_by_weight": 3,
+      "stores": [
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0059",
+          "name": "Satamart - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000078
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000090
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_006",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 40,
+      "k_available": 18,
+      "total_demand_kg": 617.0,
+      "k_min_by_weight": 16,
+      "stores": [
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0055",
+          "name": "Tạp hóa Cô Lan - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000074
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0073",
+          "name": "Nông sản Việt - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000092
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000095
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0185",
+          "name": "Tạp hóa Cô Lan - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000204
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0180",
+          "name": "Tạp hóa Minh Tâm - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000199
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0061",
+          "name": "Nông sản Việt - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000080
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0179",
+          "name": "GS25 - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000198
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000057
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_007",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 10,
+      "total_demand_kg": 301.0,
+      "k_min_by_weight": 8,
+      "stores": [
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0036",
+          "name": "An Khang - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000055
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0083",
+          "name": "Emart - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000102
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0081",
+          "name": "Pharmacity - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000100
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0183",
+          "name": "FamilyMart - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000202
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000209
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_008",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 60,
+      "k_available": 9,
+      "total_demand_kg": 369.0,
+      "k_min_by_weight": 7,
+      "stores": [
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0065",
+          "name": "Bách Hóa Xanh - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000084
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0058",
+          "name": "An Khang - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000077
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 42.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0061",
+          "name": "Nông sản Việt - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000080
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_009",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 80,
+      "k_available": 6,
+      "total_demand_kg": 307.0,
+      "k_min_by_weight": 4,
+      "stores": [
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000095
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0073",
+          "name": "Nông sản Việt - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000092
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000079
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_010",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 40,
+      "k_available": 12,
+      "total_demand_kg": 347.0,
+      "k_min_by_weight": 9,
+      "stores": [
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0061",
+          "name": "Nông sản Việt - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000080
+        },
+        {
+          "id": "S0054",
+          "name": "GS25 - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000073
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000197
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_011",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 40,
+      "k_available": 19,
+      "total_demand_kg": 677.0,
+      "k_min_by_weight": 17,
+      "stores": [
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000215
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0081",
+          "name": "Pharmacity - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000100
+        },
+        {
+          "id": "S0054",
+          "name": "GS25 - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000073
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0057",
+          "name": "7-Eleven - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000076
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0070",
+          "name": "Emart - Khánh Hội",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000089
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0045",
+          "name": "Đồ gia dụng Hoàng Gia - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000064
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0197",
+          "name": "Bách Hóa Xanh - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000216
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000068
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_012",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 60,
+      "k_available": 10,
+      "total_demand_kg": 421.0,
+      "k_min_by_weight": 8,
+      "stores": [
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000057
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0048",
+          "name": "An Khang - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000067
+        },
+        {
+          "id": "S0177",
+          "name": "Lotte Mart - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000196
+        },
+        {
+          "id": "S0037",
+          "name": "Satamart - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000056
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0045",
+          "name": "Đồ gia dụng Hoàng Gia - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000064
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0065",
+          "name": "Bách Hóa Xanh - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000084
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_013",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 50,
+      "k_available": 15,
+      "total_demand_kg": 599.0,
+      "k_min_by_weight": 12,
+      "stores": [
+        {
+          "id": "S0070",
+          "name": "Emart - Khánh Hội",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000089
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000215
+        },
+        {
+          "id": "S0183",
+          "name": "FamilyMart - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000202
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0187",
+          "name": "Bách Hóa Xanh mini - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000206
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0058",
+          "name": "An Khang - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000077
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0057",
+          "name": "7-Eleven - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000076
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0177",
+          "name": "Lotte Mart - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000196
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0036",
+          "name": "An Khang - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000055
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0048",
+          "name": "An Khang - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000067
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000060
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_014",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 11,
+      "total_demand_kg": 365.0,
+      "k_min_by_weight": 10,
+      "stores": [
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0073",
+          "name": "Nông sản Việt - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000092
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0037",
+          "name": "Satamart - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000056
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0185",
+          "name": "Tạp hóa Cô Lan - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000204
+        },
+        {
+          "id": "S0180",
+          "name": "Tạp hóa Minh Tâm - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000199
+        },
+        {
+          "id": "S0057",
+          "name": "7-Eleven - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000076
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000215
+        },
+        {
+          "id": "S0179",
+          "name": "GS25 - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000198
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000195
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_015",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 60,
+      "k_available": 12,
+      "total_demand_kg": 499.0,
+      "k_min_by_weight": 9,
+      "stores": [
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0073",
+          "name": "Nông sản Việt - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000092
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0065",
+          "name": "Bách Hóa Xanh - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000084
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0045",
+          "name": "Đồ gia dụng Hoàng Gia - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000064
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0061",
+          "name": "Nông sản Việt - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 42.0,
+          "snapped_node_id": 1000080
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0070",
+          "name": "Emart - Khánh Hội",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000089
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 42.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0198",
+          "name": "Đồ gia dụng Hoàng Gia - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000217
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0174",
+          "name": "7-Eleven - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000193
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_016",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 80,
+      "k_available": 7,
+      "total_demand_kg": 404.0,
+      "k_min_by_weight": 6,
+      "stores": [
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000095
+        },
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0198",
+          "name": "Đồ gia dụng Hoàng Gia - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000217
+        },
+        {
+          "id": "S0036",
+          "name": "An Khang - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000055
+        },
+        {
+          "id": "S0183",
+          "name": "FamilyMart - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000202
+        },
+        {
+          "id": "S0062",
+          "name": "WinMart+ - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000081
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000058
+        },
+        {
+          "id": "S0048",
+          "name": "An Khang - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000067
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0059",
+          "name": "Satamart - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000078
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000086
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_017",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 80,
+      "k_available": 7,
+      "total_demand_kg": 345.0,
+      "k_min_by_weight": 5,
+      "stores": [
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0177",
+          "name": "Lotte Mart - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000196
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0070",
+          "name": "Emart - Khánh Hội",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 35.0,
+          "snapped_node_id": 1000089
+        },
+        {
+          "id": "S0036",
+          "name": "An Khang - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000055
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0179",
+          "name": "GS25 - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000198
+        },
+        {
+          "id": "S0045",
+          "name": "Đồ gia dụng Hoàng Gia - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000064
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000210
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_018",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 10,
+      "total_demand_kg": 248.0,
+      "k_min_by_weight": 7,
+      "stores": [
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0055",
+          "name": "Tạp hóa Cô Lan - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000074
+        },
+        {
+          "id": "S0045",
+          "name": "Đồ gia dụng Hoàng Gia - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000064
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0174",
+          "name": "7-Eleven - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000193
+        },
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000095
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0179",
+          "name": "GS25 - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000198
+        },
+        {
+          "id": "S0070",
+          "name": "Emart - Khánh Hội",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000089
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000057
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000094
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_019",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 60,
+      "k_available": 12,
+      "total_demand_kg": 484.0,
+      "k_min_by_weight": 9,
+      "stores": [
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0187",
+          "name": "Bách Hóa Xanh mini - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000206
+        },
+        {
+          "id": "S0054",
+          "name": "GS25 - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000073
+        },
+        {
+          "id": "S0065",
+          "name": "Bách Hóa Xanh - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000084
+        },
+        {
+          "id": "S0183",
+          "name": "FamilyMart - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000202
+        },
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0037",
+          "name": "Satamart - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000056
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0040",
+          "name": "Tiệm sách & Văn phòng phẩm - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000059
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0058",
+          "name": "An Khang - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000077
+        },
+        {
+          "id": "S0073",
+          "name": "Nông sản Việt - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000092
+        },
+        {
+          "id": "S0055",
+          "name": "Tạp hóa Cô Lan - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000074
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000095
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0048",
+          "name": "An Khang - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000067
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0198",
+          "name": "Đồ gia dụng Hoàng Gia - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000217
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0085",
+          "name": "Co.opmart - Tôn Đản",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000104
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_020",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 50,
+      "k_available": 12,
+      "total_demand_kg": 472.0,
+      "k_min_by_weight": 10,
+      "stores": [
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0174",
+          "name": "7-Eleven - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000193
+        },
+        {
+          "id": "S0037",
+          "name": "Satamart - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000056
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0083",
+          "name": "Emart - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000102
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000095
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0059",
+          "name": "Satamart - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000078
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0177",
+          "name": "Lotte Mart - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000196
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_021",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 50,
+      "k_available": 4,
+      "total_demand_kg": 143.0,
+      "k_min_by_weight": 3,
+      "stores": [
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000057
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0062",
+          "name": "WinMart+ - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000081
+        },
+        {
+          "id": "S0044",
+          "name": "Tạp hóa Hùng Phát - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000063
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000215
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_022",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 40,
+      "k_available": 8,
+      "total_demand_kg": 227.0,
+      "k_min_by_weight": 6,
+      "stores": [
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0197",
+          "name": "Bách Hóa Xanh - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000216
+        },
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0039",
+          "name": "FamilyMart - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000058
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_023",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 80,
+      "k_available": 5,
+      "total_demand_kg": 195.0,
+      "k_min_by_weight": 3,
+      "stores": [
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0179",
+          "name": "GS25 - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000198
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0065",
+          "name": "Bách Hóa Xanh - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000084
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0182",
+          "name": "Cửa hàng Mẹ & Bé - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000201
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0177",
+          "name": "Lotte Mart - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000196
+        },
+        {
+          "id": "S0048",
+          "name": "An Khang - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000067
+        },
+        {
+          "id": "S0076",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000095
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_024",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 13,
+      "total_demand_kg": 419.0,
+      "k_min_by_weight": 11,
+      "stores": [
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0081",
+          "name": "Pharmacity - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000100
+        },
+        {
+          "id": "S0049",
+          "name": "ECO Pharma - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000068
+        },
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0055",
+          "name": "Tạp hóa Cô Lan - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000074
+        },
+        {
+          "id": "S0185",
+          "name": "Tạp hóa Cô Lan - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000204
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0080",
+          "name": "Tạp hóa Hùng Phát - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000099
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0071",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000090
+        },
+        {
+          "id": "S0059",
+          "name": "Satamart - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000078
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 4.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0197",
+          "name": "Bách Hóa Xanh - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000216
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0085",
+          "name": "Co.opmart - Tôn Đản",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000104
+        },
+        {
+          "id": "S0196",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000215
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_025",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 80,
+      "k_available": 7,
+      "total_demand_kg": 459.0,
+      "k_min_by_weight": 6,
+      "stores": [
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0174",
+          "name": "7-Eleven - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000193
+        },
+        {
+          "id": "S0043",
+          "name": "Tiệm sách & Văn phòng phẩm - Lý Chính Thắng",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000062
+        },
+        {
+          "id": "S0036",
+          "name": "An Khang - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000055
+        },
+        {
+          "id": "S0062",
+          "name": "WinMart+ - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000081
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0053",
+          "name": "Đại lý gạo Thuận An - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 42.0,
+          "snapped_node_id": 1000072
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0054",
+          "name": "GS25 - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000073
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0192",
+          "name": "Nông sản Việt - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000211
+        },
+        {
+          "id": "S0197",
+          "name": "Bách Hóa Xanh - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000216
+        },
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0083",
+          "name": "Emart - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000102
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_026",
+      "split": "val",
+      "depot_id": "D005",
+      "depot_name": "Kho Vòng Xoay Dân Chủ",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 21,
+      "total_demand_kg": 684.0,
+      "k_min_by_weight": 18,
+      "stores": [
+        {
+          "id": "S0175",
+          "name": "Circle K - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000194
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0046",
+          "name": "Tiệm sách & Văn phòng phẩm - Bà Huyện Thanh Quan",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000065
+        },
+        {
+          "id": "S0174",
+          "name": "7-Eleven - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000193
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0057",
+          "name": "7-Eleven - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000076
+        },
+        {
+          "id": "S0045",
+          "name": "Đồ gia dụng Hoàng Gia - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000064
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0085",
+          "name": "Co.opmart - Tôn Đản",
+          "district": "Quận 4",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000104
+        },
+        {
+          "id": "S0058",
+          "name": "An Khang - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000077
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 32.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0077",
+          "name": "Satamart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000096
+        },
+        {
+          "id": "S0186",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000205
+        },
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000061
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0048",
+          "name": "An Khang - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000067
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0198",
+          "name": "Đồ gia dụng Hoàng Gia - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000217
+        },
+        {
+          "id": "S0180",
+          "name": "Tạp hóa Minh Tâm - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000199
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_027",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 40,
+      "k_available": 10,
+      "total_demand_kg": 263.0,
+      "k_min_by_weight": 7,
+      "stores": [
+        {
+          "id": "S0067",
+          "name": "ECO Pharma - Hoàng Diệu",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000086
+        },
+        {
+          "id": "S0180",
+          "name": "Tạp hóa Minh Tâm - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000199
+        },
+        {
+          "id": "S0197",
+          "name": "Bách Hóa Xanh - Hưng Phú",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000216
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000209
+        },
+        {
+          "id": "S0056",
+          "name": "Tạp hóa Hùng Phát - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000075
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0083",
+          "name": "Emart - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000102
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0085",
+          "name": "Co.opmart - Tôn Đản",
+          "district": "Quận 4",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000104
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 38.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000098
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_028",
+      "split": "val",
+      "depot_id": "D020",
+      "depot_name": "Kho Cầu Chánh Hưng",
+      "depot_district": "Quận 8",
+      "q_kg": 60,
+      "k_available": 7,
+      "total_demand_kg": 196.0,
+      "k_min_by_weight": 4,
+      "stores": [
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0084",
+          "name": "Tạp hóa Minh Tâm - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000103
+        },
+        {
+          "id": "S0078",
+          "name": "Emart - Bến Vân Đồn",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000097
+        },
+        {
+          "id": "S0052",
+          "name": "WinMart+ - Nguyễn Đình Chiểu",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000071
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0047",
+          "name": "Nông sản Việt - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000066
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0189",
+          "name": "7-Eleven - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000208
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 7,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 28.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0038",
+          "name": "Ministop - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000057
+        },
+        {
+          "id": "S0190",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000209
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_029",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 50,
+      "k_available": 10,
+      "total_demand_kg": 437.0,
+      "k_min_by_weight": 9,
+      "stores": [
+        {
+          "id": "S0041",
+          "name": "Bách Hóa Xanh - Trương Định",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000060
+        },
+        {
+          "id": "S0176",
+          "name": "Tạp hóa Minh Tâm - Phạm Thế Hiển",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000195
+        },
+        {
+          "id": "S0082",
+          "name": "WinMart+ - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 6.0,
+          "snapped_node_id": 1000101
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 20.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0180",
+          "name": "Tạp hóa Minh Tâm - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000199
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0181",
+          "name": "GS25 - Bến Bình Đông",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000200
+        },
+        {
+          "id": "S0065",
+          "name": "Bách Hóa Xanh - Võ Thị Sáu",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000084
+        },
+        {
+          "id": "S0195",
+          "name": "Đại lý gạo Thuận An - Dương Bá Trạc",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000214
+        },
+        {
+          "id": "S0075",
+          "name": "Nhà thuốc Việt - Đoàn Văn Bơ",
+          "district": "Quận 4",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000094
+        },
+        {
+          "id": "S0184",
+          "name": "Nhà thuốc Việt - Quốc Lộ 50",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000203
+        },
+        {
+          "id": "S0060",
+          "name": "Pharmacity - Kỳ Đồng",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 40.0,
+          "snapped_node_id": 1000079
+        },
+        {
+          "id": "S0059",
+          "name": "Satamart - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000078
+        },
+        {
+          "id": "S0079",
+          "name": "Long Châu - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 1,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 5.0,
+          "snapped_node_id": 1000098
+        },
+        {
+          "id": "S0188",
+          "name": "Tiệm sách & Văn phòng phẩm - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000207
+        },
+        {
+          "id": "S0193",
+          "name": "Long Châu - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000212
+        },
+        {
+          "id": "S0064",
+          "name": "Đồ gia dụng Hoàng Gia - Cách Mạng Tháng 8",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 10.0,
+          "snapped_node_id": 1000083
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0085",
+          "name": "Co.opmart - Tôn Đản",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000104
+        },
+        {
+          "id": "S0054",
+          "name": "GS25 - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000073
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0187",
+          "name": "Bách Hóa Xanh mini - Tạ Quang Bửu",
+          "district": "Quận 8",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000206
+        },
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0069",
+          "name": "WinMart+ - Vĩnh Hội",
+          "district": "Quận 4",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000088
+        },
+        {
+          "id": "S0062",
+          "name": "WinMart+ - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 8,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 48.0,
+          "snapped_node_id": 1000081
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCEN_VAL_030",
+      "split": "val",
+      "depot_id": "D002",
+      "depot_name": "Kho Võ Văn Tần",
+      "depot_district": "Quận 3",
+      "q_kg": 50,
+      "k_available": 8,
+      "total_demand_kg": 244.0,
+      "k_min_by_weight": 5,
+      "stores": [
+        {
+          "id": "S0068",
+          "name": "Nhà thuốc Việt - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000087
+        },
+        {
+          "id": "S0063",
+          "name": "Đồ gia dụng Hoàng Gia - Tú Xương",
+          "district": "Quận 3",
+          "n_pkg": 5,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 25.0,
+          "snapped_node_id": 1000082
+        },
+        {
+          "id": "S0055",
+          "name": "Tạp hóa Cô Lan - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 8.0,
+          "snapped_node_id": 1000074
+        },
+        {
+          "id": "S0194",
+          "name": "Cửa hàng Mẹ & Bé - Ba Đình",
+          "district": "Quận 8",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000213
+        },
+        {
+          "id": "S0191",
+          "name": "Cửa hàng Mẹ & Bé - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 24.0,
+          "snapped_node_id": 1000210
+        },
+        {
+          "id": "S0178",
+          "name": "Pharmacity - Cao Lỗ",
+          "district": "Quận 8",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 36.0,
+          "snapped_node_id": 1000197
+        },
+        {
+          "id": "S0050",
+          "name": "7-Eleven - Trần Quốc Thảo",
+          "district": "Quận 3",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 18.0,
+          "snapped_node_id": 1000069
+        },
+        {
+          "id": "S0072",
+          "name": "Long Châu - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 15.0,
+          "snapped_node_id": 1000091
+        },
+        {
+          "id": "S0066",
+          "name": "Bách Hóa Xanh - Nguyễn Tất Thành",
+          "district": "Quận 4",
+          "n_pkg": 4,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 16.0,
+          "snapped_node_id": 1000085
+        },
+        {
+          "id": "S0074",
+          "name": "Co.opmart - Tôn Thất Thuyết",
+          "district": "Quận 4",
+          "n_pkg": 3,
+          "weight_per_pkg_kg": 4.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000093
+        },
+        {
+          "id": "S0051",
+          "name": "7-Eleven - Điện Biên Phủ",
+          "district": "Quận 3",
+          "n_pkg": 6,
+          "weight_per_pkg_kg": 5.0,
+          "demand_kg": 30.0,
+          "snapped_node_id": 1000070
+        },
+        {
+          "id": "S0042",
+          "name": "Tạp hóa Minh Tâm - Nam Kỳ Khởi Nghĩa",
+          "district": "Quận 3",
+          "n_pkg": 2,
+          "weight_per_pkg_kg": 6.0,
+          "demand_kg": 12.0,
+          "snapped_node_id": 1000061
+        }
+      ]
+    }
+  ]
+}
