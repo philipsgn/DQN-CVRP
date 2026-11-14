@@ -37,7 +37,7 @@ Bất kỳ thành phần nào của hệ thống đều phải tuân thủ tuy�
 +-----------------------------------------------------------------------------------------+
 |                                4 BẤT BIẾN CỦA DỰ ÁN                                     |
 +-----------------------------------------------------------------------------------------+
-| 1. BẢO TOÀN TẢI TRỌNG (Feasibility): Mọi tuyến r phải có sum(demands_kg) <= Q.          |
+| 1. BẢO TOÀN TẢI TRỌNG (Feasibility): Mọi tuyến r phải có sum(q_i) <= Q.                 |
 | 2. PHỤC VỤ DUY NHẤT (Uniqueness): Mỗi khách hàng 1..n xuất hiện đúng một lần.          |
 | 3. KHÉP KÍN DEPOT (Cycle Closure): Tuyến đường luôn bắt đầu và kết thúc tại 0.         |
 | 4. TRUY NGUYÊN & TRUNG THỰC (Scientific Honesty): Dữ liệu thực, đo đạc khách quan.     |
@@ -45,9 +45,12 @@ Bất kỳ thành phần nào của hệ thống đều phải tuân thủ tuy�
 ```
 
 ### Chi tiết các cam kết:
+- **Bảo toàn Tải trọng:** Mọi tuyến xe $R_k \in \mathcal{R}$ bắt buộc thỏa mãn $\sum_{i \in R_k} q_i \le Q$.
+- **Phục vụ Duy nhất:** Mỗi khách hàng $i \in V_C$ xuất hiện đúng một lần: $\sum_{k=1}^{|\mathcal{R}|} \mathbf{1}[i \in R_k] = 1$.
+- **Khép kín Depot:** Tuyến đường luôn bắt đầu và kết thúc tại kho trung tâm $0$: $R_k = (0 \to \dots \to 0)$.
 - **Nguyên tắc Single Source of Truth:** Backend chịu trách nhiệm 100% tính toán lộ trình trên đồ thị có hướng OSM, tái tạo chuỗi nút `node_path` và tọa độ chi tiết `geometry` cho từng chặng `legs[]`. Frontend tuyệt đối không tự tính đường chim bay hay suy đoán tọa độ.
-- **Không sinh nghiệm vi phạm tải trọng:** Bộ lọc Feasibility Gate 4 tầng (Kiểm tra số điểm, kiểm tra tải trọng kiện lẻ, kiểm tra tổng tải đội xe, kiểm tra thuật toán xếp thùng First-Fit-Decreasing) chặn đứng mọi kịch bản không khả thi ngay trước khi giải.
-- **Tính trung thực khoa học:** Phản ánh chính xác kết quả đo đạc: các mô hình DRL (`DDQN Base`, `DDQN Finetuned`) được đối chiếu công bằng với baseline Heuristic (`CW + Greedy`) trên cùng tập dữ liệu và thời gian thực thi.
+- **Không sinh nghiệm vi phạm tải trọng:** Bộ lọc Feasibility Gate 4 tầng (Kiểm tra số điểm $N \ge 2$, kiểm tra kiện lẻ $q_i \le Q$, kiểm tra tổng tải $\sum q_i \le K \cdot Q$, kiểm tra thuật toán xếp thùng $K_{\text{FFD}} \le K$) chặn đứng mọi kịch bản không khả thi ngay trước khi giải.
+- **Tính trung thực khoa học:** Phản ánh chính xác kết quả đo đạc: các mô hình DRL (`DDQN Base`, `Neural LNS`) được đối chiếu công bằng với baseline Heuristic (`CW + Greedy`) trên cùng tập dữ liệu và thời gian thực thi.
 
 ---
 
@@ -98,23 +101,25 @@ Bất kỳ thành phần nào của hệ thống đều phải tuân thủ tuy�
   - Chế độ **Gộp nhiều quận (Multi-District)**: Bật công tắc "Đa quận" để chọn đồng thời nhiều quận (ví dụ: Quận 1 + Bình Thạnh + Quận 3).
 - **FR-04 (Điều chỉnh Kiện hàng & Tải trọng):**
   - Mỗi cửa hàng có bộ nút tăng/giảm (`+`/`−`) số kiện hàng.
-  - Công thức tính reactive thời gian thực: $\text{Tổng kiện} = \sum n_i$, $\text{Tổng tải (kg)} = \sum (n_i \times w_{pkg})$ với $w_{pkg} = 5.0\text{ kg}$.
-  - Chặn không cho tăng số kiện nếu một cửa hàng vượt quá tải trọng xe $Q$.
+  - Công thức tính reactive thời gian thực:
+    $$\text{Tổng số kiện} = \sum_{i=1}^n n_i$$
+    $$\text{Tổng khối lượng (kg)} = \sum_{i=1}^n q_i = \sum_{i=1}^n (n_i \cdot w_{\text{pkg}}), \quad (w_{\text{pkg}} = 5.0\text{ kg})$$
+  - Chặn không cho tăng số kiện nếu một cửa hàng vượt quá tải trọng xe: $q_i > Q$.
 
 ### 4.3. Cấu hình Đội Xe & Cổng Kiểm Soát Khả Thi (Fleet & Feasibility Gate)
 - **FR-05:** Thanh trượt số lượng xe máy sẵn sàng $K \in [1, 15]$.
 - **FR-06:** Segmented buttons chọn tải trọng đồng nhất $Q \in \{40, 50, 60, 80\}\text{ kg}$.
-- **FR-07 (Multi-Tier Feasibility Gate):** Tự động kiểm tra và khóa nút điều phối nếu:
-  1. Số cửa hàng được chọn $< 2$.
-  2. Bất kỳ điểm nào có $\text{demand} > Q$.
-  3. Tổng tải $\sum d_i > K \times Q$.
-  4. Thuật toán First-Fit-Decreasing cần số xe vượt quá $K$.
+- **FR-07 (Multi-Tier Feasibility Gate):** Tự động kiểm tra và khóa nút điều phối nếu vi phạm bất kỳ điều kiện nào sau đây:
+  1. Quy mô số cửa hàng được chọn: $N < 2$.
+  2. Tồn tại điểm giao vượt quá sức chứa thùng xe: $\exists i \in V_C: q_i > Q$.
+  3. Tổng nhu cầu toàn mạng lưới vượt tổng sức chứa đội xe: $\sum_{i=1}^n q_i > K \cdot Q$.
+  4. Thuật toán xếp thùng First-Fit-Decreasing yêu cầu số xe vượt mức khả dụng: $K_{\text{FFD}} > K$.
 
 ### 4.4. Động Cơ Giải & Tái Tạo Lộ Trình (Solver & Routing)
 - **FR-08:** Hỗ trợ 3 mô hình giải thuật:
-  - `cw_greedy`: Clarke-Wright + Greedy Local Search.
-  - `ddqn_base`: Base Stage-1 Double DQN.
-  - `ddqn_finetuned`: Stage-2 Finetuned Double DQN.
+  - `cw_greedy`: Clarke-Wright Savings + Greedy Local Search.
+  - `ddqn_base`: Base Stage-1 Double DQN ($28 \to 128 \to 128 \to 4$).
+  - `neural_lns`: V9.3 Neural Large Neighborhood Search ($36 \to 128 \to 128 \to 6$) kết hợp Simulated Annealing.
 - **FR-09:** Trả về polyline chuẩn xác theo tim đường từ mảng `legs[]` có hướng.
 
 ### 4.5. Trực Quan Hóa & Mô Phỏng Lộ Trình (Visualization & Simulation)

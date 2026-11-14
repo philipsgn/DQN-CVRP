@@ -18,7 +18,7 @@ Bất kỳ thay đổi mã nguồn, tính năng mới, hoặc thao tác tái c�
 +----------------------------------------------------------------------------------+
 |                              4 BẤT BIẾN CỦA DỰ ÁN                               |
 +----------------------------------------------------------------------------------+
-| 1. BẢO TOÀN TẢI TRỌNG (Feasibility): Mọi tuyến r phải có sum(demands) <= Q.     |
+| 1. BẢO TOÀN TẢI TRỌNG (Feasibility): Mọi tuyến r phải có sum(q_i) <= Q.          |
 | 2. PHỤC VỤ DUY NHẤT (Uniqueness): Mỗi khách hàng 1..n xuất hiện đúng một lần.   |
 | 3. KHÉP KÍN DEPOT (Cycle Closure): Tuyến đường luôn bắt đầu và kết thúc tại 0.  |
 | 4. TRUY NGUYÊN THỰC NGHIỆM (Reproducibility): Cùng hạt giống RNG, cùng ngân sách |
@@ -26,8 +26,10 @@ Bất kỳ thay đổi mã nguồn, tính năng mới, hoặc thao tác tái c�
 ```
 
 ### Chi tiết các ràng buộc:
-- **Tuyệt đối không sinh nghiệm không khả thi**: Không có bất kỳ ngoại lệ nào chấp nhận nghiệm vi phạm sức chứa xe ($> Q$) hoặc vượt quá số xe tối đa ($> K$). Module `IndependentValidator` phải luôn trả về `status: "PASS"`.
-- **Cải thiện nghiêm ngặt (Strict Improvement)**: Trong vòng lặp Local Search, một nước đi của toán tử chỉ được chấp nhận khi $\Delta C = C_{\text{current}} - C_{\text{candidate}} > 0$. Nếu $\Delta C \le 0$, giữ nguyên nghiệm hiện tại và ghi nhận chuỗi không cải thiện (`streak`).
+- **Tuyệt đối không sinh nghiệm không khả thi**: Không có bất kỳ ngoại lệ nào chấp nhận nghiệm vi phạm sức chứa xe ($\text{Load}(R_k) > Q$) hoặc vượt quá số xe tối đa ($|\mathcal{R}| > K$). Module `ConstraintValidatorAgent` phải luôn trả về `status: "PASS"`.
+- **Cải thiện nghiêm ngặt (Strict Improvement)**: Trong vòng lặp Local Search, một nước đi của toán tử chỉ được chấp nhận khi:
+  $$\Delta \mathcal{C} = \mathcal{C}_{\text{current}} - \mathcal{C}_{\text{candidate}} > 0$$
+  Nếu $\Delta \mathcal{C} \le 0$, giữ nguyên nghiệm hiện tại và ghi nhận chuỗi không cải thiện (`streak`).
 - **Trung thực khoa học (Anti-Slop Research Honesty)**: Báo cáo và mã nguồn phải phản ánh chính xác kết quả đo đạc: DQN không vượt qua baseline đơn giản (Random, Cyclic, Greedy) do 3 lý do khách quan đã được chứng minh (Dư địa nhỏ $0.56\% - 1.23\%$, Lệch miền đặc trưng $A2 \to A3$, Chi phí suy luận CPU $0.27\text{ ms}$ vs $0.10\text{ ms}$). Không ngụy tạo kết quả hoặc đưa ra nhận định phóng đại.
 
 ---

@@ -46,10 +46,10 @@ https://github.com/philipsgn/DQN-CVRP/raw/main/docs/videos/MP-MOTO-CVRP%20_%20%C
 ## 3. 4 Bất Biến Cốt Lõi (Core Invariants)
 
 Mọi dòng mã nguồn và tính năng của hệ thống bắt buộc phải thỏa mãn:
-1. **Bảo toàn Tải trọng (Feasibility):** Mọi tuyến xe $r$ phải có $\sum_{i \in r} \text{demands}_i \le Q$.
-2. **Phục vụ Duy nhất (Uniqueness):** Mỗi cửa hàng $1 \dots n$ xuất hiện đúng một lần trong lộ trình.
+1. **Bảo toàn Tải trọng (Feasibility):** Mọi tuyến xe $R_k \in \mathcal{R}$ bắt buộc có $\sum_{i \in R_k} q_i \le Q$.
+2. **Phục vụ Duy nhất (Uniqueness):** Mỗi cửa hàng $i \in V_C$ xuất hiện đúng một lần trong lộ trình: $\sum_{k=1}^{|\mathcal{R}|} \mathbf{1}[i \in R_k] = 1$.
 3. **Khép kín Depot (Cycle Closure):** Tuyến xe luôn bắt đầu và kết thúc tại kho xuất phát ($0 \to \dots \to 0$).
-4. **Trung thực Khoa học (Anti-Slop Research Honesty):** Báo cáo và giao diện phản ánh đúng kết quả đo đạc thực nghiệm; đối chiếu công bằng giữa DRL và các Heuristic truyền thống.
+4. **Trung thực Khoa học (Anti-Slop Research Honesty):** Báo cáo và giao diện phản ánh đúng kết quả đo đạc thực nghiệm; đối chiếu công bằng giữa DRL và các Heuristic truyền thống. Khống chế cứng quy mô đội xe $|\mathcal{R}| \le K$.
 
 ---
 

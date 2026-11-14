@@ -70,26 +70,44 @@ flowchart TD
 
 ## 3. MÔ HÌNH HÓA TOÁN HỌC BÀI TOÁN MP-MOTO-CVRP
 
-### 3.1. Ký hiệu Toán học
-- Kho xuất phát (Depot): Ký hiệu là đỉnh $0$.
-- Tập các cửa hàng cần giao hàng: $V_C = \{1, 2, \dots, n\}$.
-- Nhu cầu hàng hóa tại điểm $i$: $q_i = n_i \times w_{pkg}$, trong đó $n_i \in \mathbb{N}^*$ là số kiện hàng, $w_{pkg} = 5.0\text{ kg}$ là trọng lượng đồng nhất mỗi kiện.
-- Đội xe máy: Tối đa $K$ phương tiện ($K \in [1, 15]$).
-- Sức chứa đồng nhất của xe máy: $Q \in \{40, 50, 60, 80\}\text{ kg}$.
-- Ma trận cự ly có hướng trên đồ thị OSM: $d(u, v)$ (khoảng cách thực tế theo tim đường từ nút $u$ sang nút $v$).
+### 3.1. Ký hiệu Toán học Cơ sở
+- **Kho xuất phát (Depot):** Ký hiệu là đỉnh $0$ với tọa độ địa lý $(lat_0, lon_0)$.
+- **Tập các cửa hàng bán lẻ cần phục vụ:** $V_C = \{1, 2, \dots, n\}$.
+- **Tập hợp toàn bộ các đỉnh:** $V = \{0\} \cup V_C$.
+- **Nhu cầu hàng hóa tại khách hàng $i$:** $q_i = n_i \cdot w_{\text{pkg}}$, trong đó:
+  - $n_i \in \mathbb{N}^*$ là số kiện hàng được đặt ($n_i \ge 1$).
+  - $w_{\text{pkg}} = 5.0\text{ kg}$ là trọng lượng tiêu chuẩn đồng nhất của một kiện hàng.
+- **Quy mô đội xe máy sẵn sàng:** $K$ phương tiện ($K \in [1, 15]$).
+- **Sức chứa tải trọng đồng nhất của thùng xe:** $Q \in \{40, 50, 60, 80\}\text{ kg}$.
+- **Ma trận cự ly có hướng trên đồ thị OSM:** $d(u, v)$ biểu thị khoảng cách thực tế ngắn nhất theo tim đường từ đỉnh $u$ đến đỉnh $v$, với tính chất bất đối xứng thực tế: $d(u, v) \ne d(v, u)$.
 
-### 3.2. Hàm Mục tiêu
-Tối thiểu hóa **tổng quãng đường di chuyển khép kín** của toàn bộ đội xe:
+### 3.2. Hàm Mục tiêu Tối ưu Hóa
+Tối thiểu hóa **tổng quãng đường di chuyển khép kín** của toàn bộ đội xe trên đồ thị có hướng:
 
-$$\min \mathcal{C}(\mathcal{R}) = \sum_{k=1}^{|\mathcal{R}|} \sum_{step=0}^{|R_k|-1} d\left(R_k[step], R_k[step+1]\right)$$
+$$\min_{\mathcal{R}} \mathcal{C}(\mathcal{R}) = \sum_{k=1}^{|\mathcal{R}|} \sum_{p=0}^{|R_k|-1} d\Big(R_k[p], \; R_k[p+1]\Big)$$
 
-Trong đó mỗi tuyến $R_k = (0, v_{k,1}, v_{k,2}, \dots, v_{k,p}, 0)$ bắt đầu và kết thúc tại Depot $0$.
+Trong đó:
+- $\mathcal{R} = \{R_1, R_2, \dots, R_m\}$ là tập hợp các tuyến đường được điều phối ($m = |\mathcal{R}| \le K$).
+- Mỗi tuyến đường $R_k = (v_{k,0}, v_{k,1}, v_{k,2}, \dots, v_{k,m_k}, v_{k,m_k+1})$ là một chu trình khép kín xuất phát và kết thúc tại kho trung tâm:
+  $$v_{k,0} = v_{k,m_k+1} = 0, \quad \forall k \in \{1, \dots, |\mathcal{R}|\}$$
 
-### 3.3. Các Ràng buộc Bắt buộc (Strict Invariants)
-1. **Phục vụ duy nhất:** $\sum_{k=1}^{|\mathcal{R}|} \mathbf{1}[i \in R_k] = 1, \quad \forall i \in V_C$.
-2. **Bảo toàn sức chứa:** $\sum_{i \in R_k} q_i \le Q, \quad \forall R_k \in \mathcal{R}$.
-3. **Giới hạn quy mô đội xe:** $|\mathcal{R}| \le K$.
-4. **Cải thiện nghiêm ngặt trong Local Search:** Một toán tử chỉ được chấp nhận khi $\Delta C = C_{\text{current}} - C_{\text{candidate}} > 0$. Nếu $\Delta C \le 0$, giữ nguyên nghiệm hiện tại.
+### 3.3. Các Ràng buộc Bắt buộc (Strict Mathematical Invariants)
+1. **Ràng buộc Phục vụ Duy nhất (Uniqueness Constraint):**
+   Mỗi khách hàng phải được phục vụ đúng một lần duy nhất bởi đúng một phương tiện:
+   $$\sum_{k=1}^{|\mathcal{R}|} \sum_{p=1}^{m_k} \mathbf{1}\big[R_k[p] = i\big] = 1, \quad \forall i \in V_C$$
+
+2. **Ràng buộc Bảo toàn Sức chứa Thùng xe (Capacity Feasibility Constraint):**
+   Tổng khối lượng hàng hóa trên mỗi tuyến xe không được vượt quá tải trọng cho phép $Q$:
+   $$\text{Load}(R_k) = \sum_{p=1}^{m_k} q_{R_k[p]} \le Q, \quad \forall R_k \in \mathcal{R}$$
+
+3. **Ràng buộc Khống chế Cứng Quy mô Đội xe (Fleet Size Cap):**
+   Số lượng xe được điều động thực tế không vượt quá số lượng xe sẵn sàng của kho:
+   $$K_{\text{used}} = |\mathcal{R}| \le K$$
+
+4. **Nguyên tắc Cải thiện Nghiêm ngặt (Strict Improvement Invariant):**
+   Trong pha tìm kiếm cục bộ, một toán tử chỉ được chấp nhận khi mức giảm chi phí là dương:
+   $$\Delta \mathcal{C} = \mathcal{C}(\mathcal{R}_{\text{current}}) - \mathcal{C}(\mathcal{R}_{\text{candidate}}) > 0$$
+   Nếu $\Delta \mathcal{C} \le 0$, giữ nguyên nghiệm hiện tại và ghi nhận chuỗi không cải thiện (`streak`).
 
 ---
 
@@ -109,7 +127,7 @@ Hệ thống tích hợp 3 bộ giải độc lập phục vụ mục đích v�
 
 ### 4.1. Kiến trúc Neural LNS (Reinforcement Learning + Large Neighborhood Search)
 Nhằm giải quyết dứt điểm hiện tượng bế tắc tại cực trị địa phương của các toán tử cục bộ đơn lẻ:
-- **Vector trạng thái 36 chiều ($S_t \in \mathbb{R}^{36}$):** Bao gồm phân bố tải trọng xe, độ rải rác không gian (spatial dispersion), tỷ lệ bất đối xứng cung đường, tiến độ tìm kiếm và lịch sử hiệu quả của 6 vĩ toán tử.
+- **Vector trạng thái 36 chiều ($S_t \in \mathbb{R}^{36}$):** Bao gồm cấu trúc phân bố tải trọng xe, độ rải rác không gian, tỷ lệ bất đối xứng cung đường OSM, tiến độ tìm kiếm và động thái của 6 vĩ toán tử LNS.
 - **Không gian 6 Vĩ toán tử Phá hủy - Tái tạo (Macro Destroy & Repair Actions):**
   - `Action 0`: Worst-Cost Removal + Greedy Best Insertion.
   - `Action 1`: Worst-Cost Removal + Regret-2 Insertion.
@@ -117,35 +135,60 @@ Nhằm giải quyết dứt điểm hiện tượng bế tắc tại cực trị
   - `Action 3`: Shaw Relatedness Removal + Regret-2 Insertion.
   - `Action 4`: Route-Squeeze (ép giải thể tuyến nhỏ nhất) + Regret-2 Insertion.
   - `Action 5`: Worst-Cost Removal + Regret-2 Insertion + 2-opt Polish.
-- **Cơ chế Chấp nhận Simulated Annealing:** Cho phép suy thoái tạm thời (degradation $\le 1.5\% - 2.0\%$) ở giai đoạn đầu với hệ số làm nguội $\alpha = 0.985$ để thoát bẫy cục bộ.
-- **Hiệu quả thực nghiệm:** Đạt mức tiết kiệm **+1.63%** so với Clarke-Wright ban đầu (16.34 km vs 16.57 km trên bài toán 24 điểm TP.HCM), vượt trội cả CW+Greedy và DDQN Gốc.
+- **Cơ chế Chấp nhận Luyện kim Simulated Annealing:** Cho phép suy thoái tạm thời ($\Delta \mathcal{C} < 0$) ở giai đoạn đầu để vượt qua "hố sâu" cực tiểu địa phương:
+  $$P\big(\text{accept} \mid \Delta \mathcal{C}, T_t\big) = \begin{cases} 1.0 & \text{khi } \Delta \mathcal{C} \ge 0 \\[4pt] \exp\left( \dfrac{\Delta \mathcal{C}}{T_t} \right) & \text{khi } \Delta \mathcal{C} < 0 \end{cases}$$
+  Với lịch làm nguội nhiệt độ hình học:
+  $$T_t = T_0 \cdot \alpha^t, \quad T_0 = 0.05 \cdot \mathcal{C}_{\text{init}}, \quad \alpha = 0.985$$
+- **Hiệu quả thực nghiệm:** Đạt mức tiết kiệm **$+1.63\%$** so với Clarke-Wright ban đầu ($16.34\text{ km}$ vs $16.57\text{ km}$ trên bài toán 24 điểm TP.HCM), vượt trội cả Heuristic Baseline và DDQN Gốc.
 
 ### 4.2. Ràng buộc Cứng Đội Xe Tối đa (Hard Fleet Cap: $K_{\text{used}} \le K$)
 Khắc phục hiện tượng phân mảnh tải trọng làm sinh thừa xe ($8/7$ xe):
-- **Gom tuyến Clarke-Wright:** Bổ sung bước ép gộp tuyến có tải trọng nhỏ nếu sau bước tính savings số tuyến vẫn vượt quá $K$.
-- **Route Consolidation (Regret-2):** Trích xuất toàn bộ khách hàng từ tuyến nhẹ nhất và tái phân bổ vào các tuyến còn lại theo tiêu chí Regret-2 mà không vượt quá $Q$. Đảm bảo 100% nghiệm xuất xưởng có $K_{\text{used}} \le K$.
+- **Thuật toán Route Consolidation (Regret-2):**
+  1. Nếu $|\mathcal{R}| > K$, sắp xếp các tuyến theo tải trọng tăng dần:
+     $$\text{Load}(R_1) \le \text{Load}(R_2) \le \dots \le \text{Load}(R_m)$$
+  2. Rút toàn bộ khách hàng khỏi tuyến nhẹ nhất $R_1$ vào tập $\mathcal{D}$.
+  3. Phân bổ các khách hàng này vào $m-1$ tuyến còn lại bằng phương pháp **Regret-2 Insertion**:
+     $$\Delta_{\text{regret}}(v_i) = \Delta \mathcal{C}^{(2)}(v_i) - \Delta \mathcal{C}^{(1)}(v_i)$$
+     chỉ chấp nhận các vị trí chèn thỏa mãn:
+     $$\text{Load}(R_k) + q_{v_i} \le Q$$
+  4. Lặp lại cho đến khi $|\mathcal{R}| \le K$. Đảm bảo 100% nghiệm xuất xưởng có $K_{\text{used}} \le K$.
 
 ### 4.3. Không gian Trạng thái $F28$ & Toán tử Cục bộ (DDQN Gốc)
 Vector trạng thái $s_t \in \mathbb{R}^{28}$ biểu diễn cô đọng cấu trúc tuyến đường tại bước $t$:
-- **12 Đặc trưng Toàn cục:** Tỷ lệ tải trọng trung bình, độ lệch chuẩn tải trọng, tỷ lệ xe đầy nhất/ít nhất, số xe chuẩn hóa ($|\mathcal{R}| / K$), tổng cự ly chuẩn hóa, tiến độ ngân sách tìm kiếm ($t / T_{\max}$), tỷ lệ cải thiện tích lũy.
-- **16 Đặc trưng Lịch sử Toán tử (4 chỉ số $\times$ 4 toán tử):**
-  - Tần suất toán tử được chọn trong 10 bước gần nhất.
-  - Tỷ lệ thành công (tỷ lệ lần sinh ra $\Delta C > 0$).
-  - Mức cải thiện trung bình chuẩn hóa.
-  - Chuỗi không cải thiện (`streak`) chuẩn hóa theo tham số patience ($streak_a / 30$).
+- **12 Đặc trưng Toàn cục ($f_0 \dots f_{11}$):**
+  - $f_0 = \mu_{\text{load}} = \frac{1}{|\mathcal{R}|} \sum_k \frac{\text{Load}(R_k)}{Q}$ (Tỷ lệ tải trung bình).
+  - $f_1 = \sigma_{\text{load}} = \sqrt{\frac{1}{|\mathcal{R}|} \sum_k (\frac{\text{Load}(R_k)}{Q} - \mu_{\text{load}})^2}$ (Độ lệch chuẩn tải trọng).
+  - $f_2 = \max_k \frac{\text{Load}(R_k)}{Q}, \quad f_3 = \min_k \frac{\text{Load}(R_k)}{Q}$.
+  - $f_4 = \frac{|\mathcal{R}|}{K}$ (Tỷ lệ điều động đội xe).
+  - $f_5 = \frac{1}{|\mathcal{R}| \cdot \mathcal{C}_{\text{init}}} \sum_k \mathcal{C}(R_k)$ (Cự ly bình quân tuyến chuẩn hóa).
+  - $f_6 = \frac{1}{\mathcal{C}_{\text{init}}} \sqrt{\frac{1}{|\mathcal{R}|} \sum_k (\mathcal{C}(R_k) - \overline{\mathcal{C}})^2}$ (Độ lệch chuẩn cự ly).
+  - $f_7 = \frac{\max_k \mathcal{C}(R_k)}{\sum_k \mathcal{C}(R_k)}$ (Tỷ số nghẽn Makespan).
+  - $f_8 = \tau_{\text{budget}} = \frac{t}{T_{\max}}$ (Tiến độ ngân sách tìm kiếm).
+  - $f_9 = \frac{\mathcal{C}_{\text{init}} - \mathcal{C}_t}{\mathcal{C}_{\text{init}}}$ (Tỷ lệ tiết kiệm cự ly tích lũy).
+  - $f_{10} = \frac{1}{W} \sum_{\tau=t-W+1}^t \mathbf{1}[\Delta \mathcal{C}_\tau > 0]$ (Tần suất cải thiện gần đây, $W=10$).
+  - $f_{11} = \frac{N}{\sum_k \mathcal{C}(R_k)}$ (Mật độ khách hàng trên cự ly hành trình).
+- **16 Đặc trưng Động thái Lịch sử ($f_{12} \dots f_{27}$):**
+  - Gồm 4 chỉ số thống kê $\times$ 4 toán tử vi mô: tần suất chọn gần đây ($\text{freq}_a$), tỷ lệ thành công ($\text{succ}_a$), mức cải thiện trung bình ($\overline{\Delta \mathcal{C}}_a$), và chuỗi bế tắc chuẩn hóa:
+    $$\text{streak\_norm}_a = \min\left(1.0, \; \frac{\text{streak}_a}{30}\right)$$
 
-### 4.4. Không gian Hành động & 4 Toán tử Local Search (Action Space)
-Tác tử chọn $a_t \in \{0, 1, 2, 3\}$:
-- **`Action 0 (2-opt)`:** Đảo ngược thứ tự di chuyển của một phân đoạn khách hàng trên cùng một tuyến. Không làm thay đổi tải trọng xe.
-- **`Action 1 (Intra-relocate)`:** Dời một khách hàng sang vị trí khác trên cùng tuyến. Không làm thay đổi tải trọng xe.
-- **`Action 2 (Inter-relocate)`:** Chuyển một khách hàng từ tuyến $A$ sang tuyến $B$. Bắt buộc kiểm tra $Load(B) + q_i \le Q$.
-- **`Action 3 (Inter-swap)`:** Đổi chỗ hai khách hàng $i \in A$ và $j \in B$. Bắt buộc kiểm tra đồng thời $Load(A) - q_i + q_j \le Q$ và $Load(B) - q_j + q_i \le Q$.
+### 4.4. Không gian Hành động & 4 Toán tử Local Search Vi Mô
+Tác tử DDQN chọn $a_t \in \{0, 1, 2, 3\}$:
+- **`Action 0 (2-opt)`:** Đảo ngược phân đoạn di chuyển trong cùng một tuyến.
+  $$\Delta \mathcal{C}_{\text{2-opt}} = d(u, v_i) + d(v_j, w) - d(u, v_j) - d(v_i, w) - \sum_{l=i}^{j-1} \Big( d(v_l, v_{l+1}) - d(v_{l+1}, v_l) \Big)$$
+- **`Action 1 (Intra-relocate)`:** Dời một khách hàng sang vị trí khác trên cùng tuyến.
+  $$\Delta \mathcal{C}_{\text{intra}} = \Big( d(u, v_i) + d(v_i, w) - d(u, w) \Big) + \Big( d(x, y) - d(x, v_i) - d(v_i, y) \Big)$$
+- **`Action 2 (Inter-relocate)`:** Chuyển một khách hàng $v_i$ từ tuyến $R_A$ sang tuyến $R_B$. Bắt buộc kiểm tra ràng buộc tải trọng:
+  $$\text{Load}(R_B) + q_{v_i} \le Q$$
+- **`Action 3 (Inter-swap)`:** Hoán đổi hai khách hàng $v_i \in R_A$ và $v_j \in R_B$. Bắt buộc kiểm tra đồng thời:
+  $$\begin{cases} \text{Load}(R_A) - q_{v_i} + q_{v_j} \le Q \\[4pt] \text{Load}(R_B) - q_{v_j} + q_{v_i} \le Q \end{cases}$$
 
 ### 4.5. Cơ chế Lọc Hành động Khả thi (Action Masking)
 Trước khi mạng DDQN tính Q-values, môi trường kiểm tra tính khả thi của 4 toán tử:
-- Nếu số tuyến đường $|\mathcal{R}| < 2$, các toán tử liên tuyến (`inter-relocate`, `inter-swap`) bị gắn nhãn vô hiệu hóa (`mask[2] = False`, `mask[3] = False`).
-- Nếu một toán tử đã đạt ngưỡng bế tắc cục bộ (`streak >= patience`), hành động đó bị khóa tạm thời để tránh lãng phí bước tìm kiếm.
-- Khi suy luận, các hành động bị khóa được gán giá trị $Q(s, a) = -\infty$, bảo đảm mạng nơ-ron chỉ chọn hành động hợp lệ.
+- Nếu số tuyến đường $|\mathcal{R}| < 2$, các toán tử liên tuyến (`inter-relocate`, `inter-swap`) bị gắn nhãn vô hiệu hóa: $m_t[2] = 0, \; m_t[3] = 0$.
+- Nếu một toán tử đã đạt ngưỡng bế tắc cục bộ ($\text{streak}_a \ge \text{patience}$), hành động đó bị khóa tạm thời.
+- Mặt nạ được áp dụng trực tiếp lên vector $Q$-values:
+  $$\widetilde{Q}(s_t, a) = \begin{cases} Q(s_t, a; \theta) & \text{khi } m_t[a] = 1 \\[4pt] -\infty & \text{khi } m_t[a] = 0 \end{cases}$$
+- Suy luận chính sách: $a_t^* = \arg\max_a \widetilde{Q}(s_t, a)$, bảo đảm $100\%$ không bao giờ chọn hành động vô nghĩa.
 
 ---
 

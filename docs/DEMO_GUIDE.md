@@ -145,21 +145,34 @@ Kịch bản được thiết kế cho phần thuyết trình và demo trực ti
 ### 3.1. Mô hình 1: Heuristic Baselines (`CW + Greedy`, `Cyclic`, `Random`)
 
 #### A. Thuật toán Tiết kiệm Clarke-Wright (Clarke-Wright Savings Heuristic)
-Clarke-Wright là thuật toán nền tảng dùng để sinh nghiệm ban đầu khả thi $R_{\text{init}}$. Ban đầu, giả định mỗi khách hàng $i$ được phục vụ bởi một xe riêng biệt theo lộ trình khép kín $(0 \to i \to 0)$, tổng chi phí ban đầu là $\sum 2 \cdot d(0, i)$.
-Khoản tiết kiệm khi gộp hai khách hàng $i$ và $j$ vào cùng một tuyến $(0 \to i \to j \to 0)$ được tính bằng:
+Clarke-Wright là thuật toán nền tảng dùng để sinh nghiệm ban đầu khả thi $\mathcal{R}_{\text{init}}$. Ban đầu, giả định mỗi khách hàng $i \in V_C$ được phục vụ bởi một xe máy riêng biệt theo lộ trình khép kín $(0 \to i \to 0)$, tổng chi phí xuất phát là:
 
-$$s_{ij} = d(0, i) + d(j, 0) - d(i, j)$$
+$$\mathcal{C}_{\text{init}} = \sum_{i=1}^n \Big( d(0, i) + d(i, 0) \Big)$$
 
-Do ma trận khoảng cách TP.HCM là **bất đối xứng** ($d(i, j) \ne d(j, i)$), công thức tính savings có hướng bắt buộc xét tính thứ tự từ đuôi tuyến này nối vào đầu tuyến kia.
+Khoản tiết kiệm (Savings) khi hợp nhất hai khách hàng $i$ và $j$ từ hai tuyến riêng lẻ vào cùng một tuyến có hướng $(\dots \to i \to j \to \dots)$ được định nghĩa chuẩn xác theo ma trận cự ly có hướng OpenStreetMap:
+
+$$s_{ij} = d(i, 0) + d(0, j) - d(i, j)$$
+
+Do đồ thị giao thông thực tế TP.HCM mang tính chất **bất đối xứng** ($d(i, j) \ne d(j, i)$ do đường một chiều, dải phân cách và ngõ hẻm), công thức tính savings có hướng bắt buộc xét rõ tính thứ tự di chuyển:
+- Nối đuôi tuyến $R_A = (0 \to \dots \to i \to 0)$ vào đầu tuyến $R_B = (0 \to j \to \dots \to 0)$ thành tuyến mới $R_{AB} = (0 \to \dots \to i \to j \to \dots \to 0)$.
+- **Điều kiện ràng buộc dung lượng tải bắt buộc:**
+
+$$\text{Load}(R_A) + \text{Load}(R_B) \le Q \iff \sum_{u \in R_A} q_u + \sum_{v \in R_B} q_v \le Q$$
 
 #### B. Tìm kiếm Cục bộ Tham lam (Greedy Local Search)
-Tại mỗi bước $t$, Greedy duyệt qua tất cả 4 toán tử cục bộ (`2-opt`, `intra-relocate`, `inter-relocate`, `inter-swap`), sinh tối đa 128 ứng viên hợp lệ cho mỗi toán tử, tính toán mức giảm cự ly:
+Tại mỗi bước lặp $t$, giải thuật Greedy tiến hành duyệt vét cạn trên tập 4 toán tử cục bộ vi mô $\mathcal{A}_{\text{micro}} = \{0: \text{2-opt}, \; 1: \text{intra-relocate}, \; 2: \text{inter-relocate}, \; 3: \text{inter-swap}\}$, sinh tối đa $|\mathcal{M}_a| \le 128$ ứng viên khả thi cho mỗi toán tử, và đánh giá mức độ giảm cự ly:
 
-$$\Delta C = C_{\text{current}} - C_{\text{candidate}}$$
+$$\Delta \mathcal{C}(a, m) = \mathcal{C}(\mathcal{R}_{\text{current}}) - \mathcal{C}\big(\mathcal{R}_{\text{candidate}}(a, m)\big)$$
 
-Toán tử nào cho $\Delta C^* = \max \Delta C > 0$ lớn nhất sẽ được chọn và áp dụng. Nếu cả 4 toán tử đều có $\Delta C \le 0$, thuật toán dừng lại do đã chạm cực trị địa phương.
+Nước đi có độ cải thiện cực đại $\Delta \mathcal{C}^*$ được xác định theo công thức:
 
-- **Ưu điểm:** Tốc độ thực thi cực nhanh (chỉ mất $10–20\text{ ms}$ cho bài toán 20–30 điểm).
+$$(a^*, m^*) = \arg\max_{a \in \mathcal{A}_{\text{micro}}, \, m \in \mathcal{M}_a} \Delta \mathcal{C}(a, m)$$
+
+Quy tắc cập nhật trạng thái nghiệm tuân thủ nguyên tắc cải thiện nghiêm ngặt:
+
+$$\mathcal{R}_{t+1} = \begin{cases} \mathcal{R}_{\text{candidate}}(a^*, m^*) & \text{khi } \Delta \mathcal{C}(a^*, m^*) > 0 \\ \mathcal{R}_t & \text{khi } \Delta \mathcal{C}(a^*, m^*) \le 0 \end{cases}$$
+
+- **Ưu điểm:** Tốc độ thực thi cực nhanh (chỉ mất $10–20\text{ ms}$ cho bài toán $20–30$ điểm).
 - **Nhược điểm:** Hoàn toàn bế tắc khi rơi vào cực tiểu cục bộ; không có cơ chế thoát hiểm.
 
 ---
@@ -167,9 +180,11 @@ Toán tử nào cho $\Delta C^* = \max \Delta C > 0$ lớn nhất sẽ được 
 ### 3.2. Mô hình 2: DDQN Gốc (Stage-1 Pre-trained on Synthetic Distributions)
 
 #### A. Kiến trúc Mạng Nơ-ron & Không gian Trạng thái
-- **Cấu trúc mạng:** Multi-Layer Perceptron (MLP) gồm 3 tầng fully-connected:
-  $$\text{Input}(28) \longrightarrow \text{FC}(128) + \text{ReLU} \longrightarrow \text{FC}(128) + \text{ReLU} \longrightarrow \text{Output}(4)$$
-- **Nhiệm vụ của mạng:** Nhận vector trạng thái $s_t \in \mathbb{R}^{28}$ biểu diễn hình học và tải trọng của nghiệm hiện tại, dự đoán vector $Q(s_t, \cdot) = [Q_0, Q_1, Q_2, Q_3]$ tương ứng với giá trị kỳ vọng của 4 toán tử cục bộ vi mô.
+- **Cấu trúc mạng:** Multi-Layer Perceptron (MLP) gồm 3 tầng liên kết đầy đủ (Fully-Connected):
+  $$\mathbb{R}^{28} \xrightarrow{\mathbf{W}_1 \in \mathbb{R}^{128 \times 28}, \, \mathbf{b}_1} \text{FC}(128) + \text{ReLU} \xrightarrow{\mathbf{W}_2 \in \mathbb{R}^{128 \times 128}, \, \mathbf{b}_2} \text{FC}(128) + \text{ReLU} \xrightarrow{\mathbf{W}_3 \in \mathbb{R}^{4 \times 128}, \, \mathbf{b}_3} \text{Output}(\mathbb{R}^4)$$
+- **Nhiệm vụ của mạng:** Nhận vector trạng thái $s_t \in \mathbb{R}^{28}$ biểu diễn thuộc tính hình học và tải trọng của lộ trình hiện tại, dự đoán vector $Q$-values kỳ vọng cho 4 toán tử vi mô:
+
+$$\mathbf{Q}(s_t; \theta) = \big[ Q(s_t, a_0; \theta), \; Q(s_t, a_1; \theta), \; Q(s_t, a_2; \theta), \; Q(s_t, a_3; \theta) \big]^\top \in \mathbb{R}^4$$
 
 #### B. Phân tích Nguyên nhân Hạn chế Học thuật (Anti-Slop Research Honesty)
 Trong các bài báo quốc tế và thực nghiệm thực tế, DDQN chọn toán tử cục bộ sau Clarke-Wright **không thể vượt trội áp đảo** so với Greedy. Nhóm chứng minh 3 nguyên nhân khách quan:
@@ -196,80 +211,119 @@ flowchart LR
 
 #### A. Kiến trúc Mạng Nơ-ron & Không gian Trạng thái Mở rộng
 - **Cấu trúc mạng:**
-  $$\text{Input}(36) \longrightarrow \text{FC}(128) + \text{ReLU} \longrightarrow \text{FC}(128) + \text{ReLU} \longrightarrow \text{Output}(6)$$
+  $$\mathbb{R}^{36} \xrightarrow{\mathbf{W}_1 \in \mathbb{R}^{128 \times 36}} \text{FC}(128) + \text{ReLU} \xrightarrow{\mathbf{W}_2 \in \mathbb{R}^{128 \times 128}} \text{FC}(128) + \text{ReLU} \xrightarrow{\mathbf{W}_3 \in \mathbb{R}^{6 \times 128}} \text{Output}(\mathbb{R}^6)$$
 - Tác tử không chọn toán tử cục bộ đổi chỗ 1 điểm, mà quyết định **chiến lược vĩ mô** phá hủy một cụm từ $20\% - 40\%$ số điểm giao và tái cấu trúc lại toàn bộ mạng lưới.
 
 #### B. Cơ chế Chấp nhận Luyện kim (Simulated Annealing Acceptance)
-Thay vì chỉ chấp nhận khi $\Delta C > 0$ một cách bảo thủ, Neural LNS tích hợp cơ chế làm nguội Simulated Annealing. Nếu nước đi làm tăng cự ly ($\Delta C = C_{\text{current}} - C_{\text{candidate}} < 0$), nghiệm candidate vẫn được chấp nhận với xác suất:
+Thay vì chỉ chấp nhận khi $\Delta \mathcal{C} > 0$ một cách bảo thủ, Neural LNS tích hợp cơ chế làm nguội Simulated Annealing. Nếu nước đi làm tăng cự ly ($\Delta \mathcal{C} = \mathcal{C}_{\text{current}} - \mathcal{C}_{\text{candidate}} < 0$), nghiệm ứng viên $\mathcal{R}_{\text{candidate}}$ vẫn được chấp nhận với xác suất chuyển trạng thái:
 
-$$P(\text{accept}) = \exp\left( \frac{\Delta C}{T_t} \right)$$
+$$P\big(\text{accept} \mid \Delta \mathcal{C}, T_t\big) = \begin{cases} 1.0 & \text{khi } \Delta \mathcal{C} \ge 0 \\ \exp\left( \dfrac{\Delta \mathcal{C}}{T_t} \right) & \text{khi } \Delta \mathcal{C} < 0 \end{cases}$$
 
-Trong đó nhiệt độ $T_t$ giảm dần theo từng bước tìm kiếm:
+Trong đó nhiệt độ $T_t$ suy giảm hình học theo từng bước tìm kiếm:
 
-$$T_t = T_0 \cdot \alpha^t, \quad T_0 = 0.05 \cdot C_{\text{init}}, \quad \alpha = 0.985$$
+$$T_t = T_0 \cdot \alpha^t, \quad \text{với } T_0 = \beta \cdot \mathcal{C}_{\text{init}}, \; \beta = 0.05, \; \alpha = 0.985$$
 
 Cơ chế này cho phép thuật toán tạm thời suy thoái cự ly trong khoảng $1.5\% - 2.0\%$ ở các bước đầu để nhảy ra khỏi "hố sâu" cực tiểu địa phương, sau đó tái cấu trúc tuyến về trạng thái tối ưu toàn cục hơn.
 
 #### C. Kết quả Vượt trội Định lượng
 Trên tập dữ liệu 24 điểm giao hàng thực tế tại TP.HCM (tổng tải $315\text{ kg}$, $K=7\text{ xe}$, $Q=50\text{ kg}$):
-- `CW + Greedy`: $16.57\text{ km}$ (+0.22% savings).
-- `DDQN Gốc`: $16.61\text{ km}$ (+0.00% savings).
-- `Neural LNS (TP.HCM)`: **$16.34\text{ km}$ (+1.63% savings)**, rút ngắn thêm $230\text{ mét}$ hành trình bám tim đường trong khi vẫn bảo đảm $100\%$ dung lượng tải và $K_{\text{used}} = 7/7\text{ xe}$.
+- `CW + Greedy`: $16.57\text{ km}$ ($+0.22\%$ savings).
+- `DDQN Gốc`: $16.61\text{ km}$ ($+0.00\%$ savings).
+- `Neural LNS (TP.HCM)`: **$16.34\text{ km}$ ($+1.63\%$ savings)**, rút ngắn thêm $230\text{ m}$ hành trình bám tim đường trong khi vẫn bảo đảm $100\%$ dung lượng tải và $K_{\text{used}} = 7/7\text{ xe}$.
 
 ---
 
 ## PHẦN IV: BÓC TÁCH TOÁN HỌC VECTOR ĐẶC TRƯNG TRẠNG THÁI (F28 & F36)
 
-Một đóng góp kỹ thuật quan trọng của đồ án là việc ánh xạ cấu trúc đồ thị định tuyến phức tạp thành các vector số học có số chiều cố định, không phụ thuộc vào số lượng khách hàng $N$ thay đổi.
+Một đóng góp kỹ thuật quan trọng của đồ án là việc ánh xạ cấu trúc đồ thị định tuyến không gian phức tạp thành các vector số học có số chiều cố định, không phụ thuộc vào quy mô số lượng khách hàng $N$ thay đổi.
 
 ---
 
-### 4.1. Bóc Tách Chi Tiết Vector Trạng Thái $F28$ (28 Chiều - Dành Cho DDQN Gốc)
+### 4.1. Bóc Tách Chi Tiết Vector Trạng Thái $F28$ (28 Chiều — Dành Cho DDQN Gốc)
 
-Vector $s_t \in \mathbb{R}^{28}$ được chia thành 2 nhóm đặc trưng:
+Vector trạng thái $s_t \in \mathbb{R}^{28}$ được phân rã thành 2 nhóm đặc trưng cấu trúc và động thái:
 
 #### Nhóm 1: 12 Đặc Trưng Toàn Cục (Global Structural Features: $f_0 \dots f_{11}$)
-1. **$f_0$ - Tỷ lệ tải trọng trung bình ($\mu_{\text{load}}$):**
-   $$f_0 = \frac{1}{|\mathcal{R}|} \sum_{k=1}^{|\mathcal{R}|} \frac{\text{Load}(R_k)}{Q} \in [0, 1]$$
-   Phản ánh mức độ lấp đầy thùng xe trung bình của toàn đội xe máy.
-2. **$f_1$ - Độ lệch chuẩn tải trọng ($\sigma_{\text{load}}$):**
-   $$f_1 = \sqrt{\frac{1}{|\mathcal{R}|} \sum_{k=1}^{|\mathcal{R}|} \left(\frac{\text{Load}(R_k)}{Q} - f_0\right)^2}$$
-   Phản ánh sự mất cân bằng tải giữa các xe (giá trị cao báo hiệu có xe chở đầy, xe chở rỗng).
-3. **$f_2$ - Tỷ lệ tải xe nặng nhất ($\max \text{Load} / Q$):** Đo lường nguy cơ vi phạm sức chứa khi điều chuyển khách.
-4. **$f_3$ - Tỷ lệ tải xe nhẹ nhất ($\min \text{Load} / Q$):** Đo lường tiềm năng giải thể gom tuyến.
-5. **$f_4$ - Tỷ lệ xe hoạt động chuẩn hóa ($|\mathcal{R}| / K$):** Tỷ lệ số xe đang được điều động so với tổng số xe sẵn sàng $K$.
-6. **$f_5$ - Cự ly tuyến trung bình chuẩn hóa:** Cự ly trung bình mỗi xe chia cho bán kính phục vụ cực đại.
-7. **$f_6$ - Độ lệch chuẩn cự ly giữa các tuyến:** Mức độ chênh lệch quãng đường giữa tài xế chạy xa nhất và gần nhất.
-8. **$f_7$ - Tỷ lệ cự ly tuyến dài nhất so với toàn mạng:** Đo lường độ nghẽn makespan của đội xe.
-9. **$f_8$ - Tiến độ ngân sách tìm kiếm ($t / T_{\max}$):**
-   $$f_8 = \frac{t}{T_{\max}} \in [0, 1]$$
-   Cho phép mạng nơ-ron biết mình đang ở giai đoạn đầu (khám phá) hay giai đoạn cuối (hội tụ).
-10. **$f_9$ - Tỷ lệ cải thiện tích lũy:**
-    $$f_9 = \frac{C_{\text{init}} - C_t}{C_{\text{init}}} \in [0, 1]$$
-11. **$f_{10}$ - Tỷ lệ bước cải thiện thành công gần đây:** Tỷ lệ số bước có $\Delta C > 0$ trong 10 bước qua.
-12. **$f_{11}$ - Hệ số mật độ điểm dừng:** Số khách hàng trung bình trên một kilomet di chuyển.
 
-#### Nhóm 2: 16 Đặc Trưng Lịch Sử Toán Tử (Operator Dynamics Features: $f_{12} \dots f_{27}$)
-Gồm 4 chỉ số thống kê $\times$ 4 toán tử cục bộ ($a \in \{0, 1, 2, 3\}$):
-- **$f_{12}, f_{16}, f_{20}, f_{24}$ - Tần suất được chọn trong 10 bước gần nhất ($freq_a$):** Đo lường mức độ ưu tiên gần đây của toán tử $a$.
-- **$f_{13}, f_{17}, f_{21}, f_{25}$ - Tỷ lệ thành công lịch sử ($succ_a$):** Số lần $\Delta C > 0$ chia cho tổng số lần toán tử $a$ được gọi.
-- **$f_{14}, f_{18}, f_{22}, f_{26}$ - Mức cải thiện cự ly trung bình chuẩn hóa ($\overline{\Delta C}_a$):** Hiệu quả giảm cự ly trên mỗi bước thành công.
-- **$f_{15}, f_{19}, f_{23}, f_{27}$ - Chuỗi không cải thiện chuẩn hóa ($streak_a / \text{patience}$):**
-  $$f = \min\left(1.0, \; \frac{streak_a}{30}\right)$$
-  Báo hiệu toán tử này đã cạn kiệt tiềm năng cải thiện trong lân cận hiện tại.
+1. **$f_0$ — Tỷ lệ tải trọng trung bình của đội xe ($\mu_{\text{load}}$):**
+   $$f_0 = \frac{1}{|\mathcal{R}|} \sum_{k=1}^{|\mathcal{R}|} \frac{\text{Load}(R_k)}{Q} \in [0, 1]$$
+   Đo lường mức độ lấp đầy thùng xe bình quân của toàn bộ các phương tiện đang vận hành.
+
+2. **$f_1$ — Độ lệch chuẩn tỷ lệ tải trọng ($\sigma_{\text{load}}$):**
+   $$f_1 = \sqrt{\frac{1}{|\mathcal{R}|} \sum_{k=1}^{|\mathcal{R}|} \left(\frac{\text{Load}(R_k)}{Q} - f_0\right)^2}$$
+   Phản ánh sự mất cân đối tải giữa các xe (giá trị cao báo hiệu tình trạng xe chở quá đầy trong khi xe khác chở rỗng).
+
+3. **$f_2$ — Tỷ lệ tải xe nặng nhất ($\max \text{Load} / Q$):**
+   $$f_2 = \max_{k=1 \dots |\mathcal{R}|} \frac{\text{Load}(R_k)}{Q} \in [0, 1]$$
+   Đo lường nguy cơ vi phạm sức chứa khi điều chuyển khách hàng sang tuyến này.
+
+4. **$f_3$ — Tỷ lệ tải xe nhẹ nhất ($\min \text{Load} / Q$):**
+   $$f_3 = \min_{k=1 \dots |\mathcal{R}|} \frac{\text{Load}(R_k)}{Q} \in [0, 1]$$
+   Đo lường tiềm năng giải thể gom tuyến nhằm tiết kiệm chi phí cố định của một phương tiện.
+
+5. **$f_4$ — Tỷ lệ điều động đội xe chuẩn hóa ($|\mathcal{R}| / K$):**
+   $$f_4 = \frac{|\mathcal{R}|}{K} \in (0, 1]$$
+   Tỷ lệ số xe đang lăn bánh thực tế so với tổng quy mô đội xe sẵn sàng $K$.
+
+6. **$f_5$ — Cự ly tuyến bình quân chuẩn hóa ($\overline{\mathcal{C}}_{\text{norm}}$):**
+   $$f_5 = \frac{1}{|\mathcal{R}| \cdot \mathcal{C}_{\text{init}}} \sum_{k=1}^{|\mathcal{R}|} \mathcal{C}(R_k)$$
+   Cự ly trung bình mỗi xe chia cho tổng chi phí ban đầu để giữ giá trị trong miền xác định hữu hạn.
+
+7. **$f_6$ — Độ lệch chuẩn cự ly giữa các tuyến ($\sigma_{\mathcal{C}}$):**
+   $$f_6 = \frac{1}{\mathcal{C}_{\text{init}}} \sqrt{\frac{1}{|\mathcal{R}|} \sum_{k=1}^{|\mathcal{R}|} \left(\mathcal{C}(R_k) - \overline{\mathcal{C}}\right)^2}$$
+   Đo lường mức độ công bằng về khối lượng công việc và thời gian di chuyển giữa các tài xế.
+
+8. **$f_7$ — Tỷ số nghẽn Makespan ($\rho_{\text{makespan}}$):**
+   $$f_7 = \frac{\max_{k} \mathcal{C}(R_k)}{\sum_{k=1}^{|\mathcal{R}|} \mathcal{C}(R_k)} \in \left[\frac{1}{|\mathcal{R}|}, \; 1\right]$$
+   Tỷ lệ độ dài tuyến xe về kho muộn nhất so với tổng cự ly toàn mạng lưới.
+
+9. **$f_8$ — Tiến độ ngân sách tìm kiếm cục bộ ($\tau_{\text{budget}}$):**
+   $$f_8 = \frac{t}{T_{\max}} \in [0, 1]$$
+   Cung cấp thông tin thời gian biểu để mạng nơ-ron điều chỉnh giữa khám phá (Exploration) và hội tụ (Exploitation).
+
+10. **$f_9$ — Tỷ lệ cải thiện chi phí tích lũy ($\Delta \mathcal{C}_{\text{cum}}$):**
+    $$f_9 = \frac{\mathcal{C}_{\text{init}} - \mathcal{C}_t}{\mathcal{C}_{\text{init}}} \in [0, 1]$$
+    Đo lường tổng quãng đường đã tiết kiệm được kể từ nghiệm xuất phát Clarke-Wright.
+
+11. **$f_{10}$ — Tỷ lệ bước cải thiện thành công gần đây ($\text{succ}_{\text{recent}}$):**
+    $$f_{10} = \frac{1}{W} \sum_{\tau = t - W + 1}^t \mathbf{1}\big[\Delta \mathcal{C}_\tau > 0\big], \quad (W = 10)$$
+    Tần suất tìm thấy nước đi giảm cự ly trong cửa sổ trượt $10$ bước gần nhất.
+
+12. **$f_{11}$ — Hệ số mật độ điểm dừng trên hành trình ($\text{density}$):**
+    $$f_{11} = \frac{N}{\sum_{k=1}^{|\mathcal{R}|} \mathcal{C}(R_k)}$$
+    Số khách hàng phục vụ bình quân trên mỗi kilomet hành trình di chuyển.
 
 ---
 
-### 4.2. Bóc Tách Chi Tiết Vector Trạng Thái $F36$ (36 Chiều - Dành Cho Neural LNS)
+#### Nhóm 2: 16 Đặc Trưng Động Thái Lịch Sử Toán Tử ($f_{12} \dots f_{27}$)
 
-Vector trạng thái $S_t \in \mathbb{R}^{36}$ trong Neural LNS nâng cấp toàn diện góc nhìn của tác tử về không gian bài toán:
+Bao gồm $4\text{ chỉ số thống kê} \times 4\text{ toán tử vi mô}$ ($a \in \{0: \text{2-opt}, \; 1: \text{intra}, \; 2: \text{inter-rel}, \; 3: \text{inter-swap}\}$):
 
-| Khoảng chỉ số | Tên nhóm đặc trưng | Số chiều | Ý nghĩa vật lý & Công thức toán học |
-| :--- | :--- | :---: | :--- |
-| **$f_0 \dots f_7$** | Cấu trúc Tải trọng Tuyến | 8 | Tải trung bình, $\sigma_{\text{load}}$, $\min/\max$ tải, số tuyến có tải dưới $50\%$, hệ số biến thiên tải trọng $CV = \sigma / \mu$, tỷ lệ xe trống. |
-| **$f_8 \dots f_{11}$** | Hình học & Bất đối xứng OSM | 4 | Bán kính bao quanh cụm khách hàng, khoảng cách trung bình đến Depot, **tỷ lệ bất đối xứng cự ly trung bình** $\frac{d(u, v)}{d(v, u)}$, mức độ phân cụm không gian. |
-| **$f_{12} \dots f_{17}$** | Tiến độ & Trạng thái Annealing | 6 | Tiến độ ngân sách $t / T_{\max}$, tỷ lệ nhiệt độ hiện tại $T_t / T_0$, tỷ lệ chấp nhận nước đi thoái biến tích lũy, số bước liên tiếp không cải thiện kỷ lục tốt nhất ($streak_{\text{best}}$). |
-| **$f_{18} \dots f_{35}$** | Động thái 6 Vĩ toán tử LNS | 18 | Gồm $3\text{ chỉ số} \times 6\text{ vĩ toán tử}$: Tần suất chọn gần đây (6), tỷ lệ thành công (6), biên độ delta cost chuẩn hóa (6). |
+1. **Tần suất được chọn trong cửa sổ gần nhất ($W=10$ bước):**
+   $$f_{12 + 4a} = \text{freq}_a = \frac{1}{W} \sum_{\tau = t - W + 1}^t \mathbf{1}[a_\tau = a] \in [0, 1]$$
+
+2. **Tỷ lệ thành công lịch sử tích lũy ($\text{succ}_a$):**
+   $$f_{13 + 4a} = \text{succ}_a = \frac{\sum_{\tau=1}^t \mathbf{1}[a_\tau = a \land \Delta \mathcal{C}_\tau > 0]}{\max\left(1, \; \sum_{\tau=1}^t \mathbf{1}[a_\tau = a]\right)} \in [0, 1]$$
+
+3. **Mức cải thiện cự ly trung bình chuẩn hóa ($\overline{\Delta \mathcal{C}}_a$):**
+   $$f_{14 + 4a} = \overline{\Delta \mathcal{C}}_a = \frac{\sum_{\tau=1}^t \Delta \mathcal{C}_\tau \cdot \mathbf{1}[a_\tau = a \land \Delta \mathcal{C}_\tau > 0]}{\mathcal{C}_{\text{init}} \cdot \max\left(1, \; \sum_{\tau=1}^t \mathbf{1}[a_\tau = a \land \Delta \mathcal{C}_\tau > 0]\right)}$$
+
+4. **Chuỗi không cải thiện chuẩn hóa theo ngưỡng kiên nhẫn ($\text{patience} = 30$):**
+   $$f_{15 + 4a} = \text{streak\_norm}_a = \min\left(1.0, \; \frac{\text{streak}_a}{30}\right) \in [0, 1]$$
+   Khi $\text{streak\_norm}_a \to 1.0$, tác tử nhận diện lân cận của toán tử $a$ đã cạn kiệt tiềm năng cải thiện.
+
+---
+
+### 4.2. Bóc Tách Chi Tiết Vector Trạng Thái $F36$ (36 Chiều — Dành Cho Neural LNS)
+
+Vector trạng thái $S_t \in \mathbb{R}^{36}$ trong Neural LNS nâng cấp toàn diện góc nhìn không gian, bao gồm 4 khối đặc trưng chuyên sâu:
+
+| Khối đặc trưng | Khoảng chỉ số | Chiều | Ý nghĩa vật lý & Biểu thức toán học chuẩn LaTeX |
+| :--- | :---: | :---: | :--- |
+| **1. Cấu trúc Tải trọng Tuyến** | $f_0 \dots f_7$ | $8$ | - $f_0 = \mu_{\text{load}} = \frac{1}{|\mathcal{R}|} \sum_k \frac{\text{Load}(R_k)}{Q}$<br/>- $f_1 = \sigma_{\text{load}} = \sqrt{\frac{1}{|\mathcal{R}|} \sum_k (\frac{\text{Load}(R_k)}{Q} - \mu_{\text{load}})^2}$<br/>- $f_2 = \min_k \frac{\text{Load}(R_k)}{Q}, \quad f_3 = \max_k \frac{\text{Load}(R_k)}{Q}$<br/>- $f_4 = \rho_{<50\%} = \frac{1}{|\mathcal{R}|} \sum_k \mathbf{1}\left[\frac{\text{Load}(R_k)}{Q} < 0.5\right]$<br/>- $f_5 = CV_{\text{load}} = \frac{\sigma_{\text{load}}}{\mu_{\text{load}} + \epsilon}$ (Hệ số biến thiên tải)<br/>- $f_6 = \rho_{\text{idle}} = \frac{K - |\mathcal{R}|}{K}$ (Tỷ lệ xe dự phòng chưa dùng)<br/>- $f_7 = \Delta \text{Load}_{\max} = f_3 - f_2$ (Biên độ chênh lệch tải cực đại) |
+| **2. Hình học & Bất đối xứng OSM** | $f_8 \dots f_{11}$ | $4$ | - $f_8 = R_{\text{cluster}} = \frac{\max_{i \in V_C} d(0, i)}{\max_{(u, v)} d(u, v)}$ (Bán kính cụm phục vụ)<br/>- $f_9 = \overline{d}_0 = \frac{1}{N} \sum_{i \in V_C} \frac{d(0, i) + d(i, 0)}{2 \cdot \max d}$ (Khoảng cách trung bình Depot)<br/>- $f_{10} = \rho_{\text{asym}} = \frac{1}{|E_{\mathcal{R}}|} \sum_{(u, v) \in E_{\mathcal{R}}} \frac{\|d(u, v) - d(v, u)\|}{d(u, v) + d(v, u) + \epsilon}$ (Mức bất đối xứng cung đường OSM)<br/>- $f_{11} = \text{DB}_{\text{spatial}}$ (Hệ số phân tách cụm Davies-Bouldin chuẩn hóa) |
+| **3. Tiến độ & Luyện kim Annealing** | $f_{12} \dots f_{17}$ | $6$ | - $f_{12} = \tau_{\text{budget}} = \frac{t}{T_{\max}}$ (Tiến độ ngân sách tìm kiếm)<br/>- $f_{13} = \frac{T_t}{T_0} = \alpha^t$ (Tỷ lệ nhiệt độ Simulated Annealing hiện tại)<br/>- $f_{14} = \rho_{\text{accept\_degrade}} = \frac{\sum \mathbf{1}[\text{accepted} \, \land \, \Delta \mathcal{C} < 0]}{\max(1, \, \sum \mathbf{1}[\Delta \mathcal{C} < 0])}$ (Tỷ lệ chấp nhận nước đi thoái biến)<br/>- $f_{15} = \text{streak\_norm}_{\text{best}} = \min(1.0, \, \frac{\text{streak}_{\text{best}}}{30})$ (Chuỗi không cải thiện Best-So-Far)<br/>- $f_{16} = \frac{\mathcal{C}_{\text{init}} - \mathcal{C}_{\text{best}}}{\mathcal{C}_{\text{init}}}$ (Tỷ lệ cải thiện nghiệm kỷ lục)<br/>- $f_{17} = \frac{\mathcal{C}_t - \mathcal{C}_{\text{best}}}{\mathcal{C}_{\text{best}}}$ (Khoảng cách giữa nghiệm hiện tại và kỷ lục) |
+| **4. Động thái 6 Vĩ toán tử LNS** | $f_{18} \dots f_{35}$ | $18$ | Gồm $3\text{ chỉ số} \times 6\text{ vĩ toán tử Macro } a \in \{0 \dots 5\}$:<br/>- $f_{18 + 3a} = \text{freq}_a^{(10)} = \frac{1}{10} \sum_{\tau=t-9}^t \mathbf{1}[a_\tau = a]$<br/>- $f_{19 + 3a} = \text{succ}_a = \frac{\sum \mathbf{1}[a_\tau = a \, \land \, \text{accepted}]}{\max(1, \, \sum \mathbf{1}[a_\tau = a])}$<br/>- $f_{20 + 3a} = \overline{\Delta \mathcal{C}}_a = \frac{\sum \Delta \mathcal{C}_\tau \cdot \mathbf{1}[a_\tau = a \, \land \, \text{accepted}]}{\mathcal{C}_{\text{init}} \cdot \max(1, \, \sum \mathbf{1}[a_\tau = a \, \land \, \text{accepted}])}$ |
 
 ---
 
@@ -277,7 +331,7 @@ Vector trạng thái $S_t \in \mathbb{R}^{36}$ trong Neural LNS nâng cấp toà
 
 ---
 
-### 5.1. Bốn Toán Tử Cục Bộ Vi Mô (Micro Operators - DDQN Gốc)
+### 5.1. Bốn Toán Tử Cục Bộ Vi Mô (Micro Operators — DDQN Gốc)
 
 ```mermaid
 flowchart TD
@@ -289,42 +343,63 @@ flowchart TD
     end
 ```
 
-1. **`Action 0 (2-opt)`:** Chọn một tuyến $R_k$, cắt bỏ 2 cạnh không kề nhau và nối lại theo chiều đảo ngược:
-   $$(v_1 \to v_2 \dots v_p \to v_{p+1}) \Longrightarrow (v_1 \to v_p \dots v_2 \to v_{p+1})$$
-   *Ràng buộc tải trọng:* Nghiễm nhiên bảo toàn vì tập khách hàng trên tuyến không đổi.
-2. **`Action 1 (Intra-relocate)`:** Rút một khách hàng $v_i$ ra khỏi tuyến $R_k$ và chèn vào vị trí $j$ trên cùng tuyến đó.
-   *Ràng buộc tải trọng:* Nghiễm nhiên bảo toàn.
-3. **`Action 2 (Inter-relocate)`:** Rút khách hàng $v_i$ từ tuyến $R_A$ và chèn vào tuyến $R_B$.
-   *Ràng buộc tải trọng bắt buộc:*
-   $$\text{Load}(R_B) + q_{v_i} \le Q$$
-   Nếu điều kiện không thỏa mãn, ứng viên lập tức bị loại bỏ mà không cần tính toán chi phí.
-4. **`Action 3 (Inter-swap)`:** Hoán đổi đồng thời khách hàng $v_i \in R_A$ và $v_j \in R_B$.
-   *Ràng buộc tải trọng bắt buộc:*
-   $$\begin{cases} \text{Load}(R_A) - q_{v_i} + q_{v_j} \le Q \\ \text{Load}(R_B) - q_{v_j} + q_{v_i} \le Q \end{cases}$$
+1. **`Action 0 (2-opt)`:** Chọn một tuyến $R_k = (0 \to \dots \to u \to v_i \to \dots \to v_j \to w \to \dots \to 0)$, đảo ngược phân đoạn từ $v_i$ đến $v_j$ thành $(0 \to \dots \to u \to v_j \dots v_i \to w \to \dots \to 0)$.
+   - Mức biến thiên cự ly trên đồ thị có hướng OSM:
+     $$\Delta \mathcal{C}_{\text{2-opt}} = d(u, v_i) + d(v_j, w) - d(u, v_j) - d(v_i, w) - \sum_{l=i}^{j-1} \Big( d(v_l, v_{l+1}) - d(v_{l+1}, v_l) \Big)$$
+   - *Ràng buộc tải trọng:* $\sum_{v \in R_k} q_v$ không đổi $\implies$ Bảo toàn khả thi $100\%$.
+
+2. **`Action 1 (Intra-relocate)`:** Rút một khách hàng $v_i$ ra khỏi vị trí giữa $(u, w)$ trên tuyến $R_k$ và tái chèn vào giữa $(x, y)$ trên cùng tuyến đó.
+   - Mức biến thiên cự ly:
+     $$\Delta \mathcal{C}_{\text{intra}} = \Big( d(u, v_i) + d(v_i, w) - d(u, w) \Big) + \Big( d(x, y) - d(x, v_i) - d(v_i, y) \Big)$$
+   - *Ràng buộc tải trọng:* Bảo toàn khả thi $100\%$.
+
+3. **`Action 2 (Inter-relocate)`:** Rút khách hàng $v_i$ khỏi tuyến $R_A$ (giữa $u_A$ và $w_A$) và chèn sang tuyến $R_B$ (giữa $x_B$ và $y_B$).
+   - Mức biến thiên cự ly:
+     $$\Delta \mathcal{C}_{\text{inter-rel}} = \Big( d(u_A, v_i) + d(v_i, w_A) - d(u_A, w_A) \Big) + \Big( d(x_B, y_B) - d(x_B, v_i) - d(v_i, y_B) \Big)$$
+   - **Ràng buộc sức chứa bắt buộc:**
+     $$\text{Load}(R_B) + q_{v_i} \le Q$$
+     Nếu điều kiện vi phạm, ứng viên lập tức bị hủy bỏ không tính toán chi phí.
+
+4. **`Action 3 (Inter-swap)`:** Hoán đổi vị trí của hai khách hàng $v_i \in R_A$ (giữa $u_A, w_A$) và $v_j \in R_B$ (giữa $x_B, y_B$).
+   - Mức biến thiên cự ly:
+     $$\Delta \mathcal{C}_{\text{inter-swap}} = \Big( d(u_A, v_i) + d(v_i, w_A) - d(u_A, v_j) - d(v_j, w_A) \Big) + \Big( d(x_B, v_j) + d(v_j, y_B) - d(x_B, v_i) - d(v_i, y_B) \Big)$$
+   - **Ràng buộc sức chứa kép bắt buộc:**
+     $$\begin{cases} \text{Load}(R_A) - q_{v_i} + q_{v_j} \le Q \\[4pt] \text{Load}(R_B) - q_{v_j} + q_{v_i} \le Q \end{cases}$$
 
 ---
 
-### 5.2. Sáu Vĩ Toán Tử Phá Hủy & Tái Tạo (Macro Actions - Neural LNS)
+### 5.2. Sáu Vĩ Toán Tử Phá Hủy & Tái Tạo (Macro Actions — Neural LNS)
 
-Tại mỗi bước, tác tử Neural LNS phá hủy một tập con $\mathcal{D} \subset V_C$ gồm $q$ khách hàng ($q \in [2, \max(3, 0.35 \cdot N)]$) bằng 1 trong 3 cơ chế Destroy, sau đó tái chèn bằng 1 trong 2 cơ chế Repair:
+Tại mỗi bước $t$, tác tử Neural LNS trích xuất một tập con $\mathcal{D} \subset V_C$ gồm $q$ khách hàng ($q \in [2, \; \max(3, \lfloor 0.35 \cdot N \rfloor)]$) thông qua 1 trong 3 cơ chế Phá hủy (Destroy), sau đó tái chèn thông minh bằng 1 trong 2 cơ chế Tái tạo (Repair):
 
 #### A. Các Cơ Chế Phá Hủy (Destroy Mechanisms)
-1. **Worst-Cost Removal:** Tính toán chi phí tiết kiệm khi rút khách hàng $i$ ra khỏi tuyến:
-   $$\text{cost\_saving}(i) = d(\text{pred}(i), i) + d(i, \text{succ}(i)) - d(\text{pred}(i), \text{succ}(i))$$
-   Khách hàng có chi phí đóng góp lớn nhất (làm tuyến bị gãy khúc, đi vòng xa) sẽ bị ưu tiên rút ra trước.
-2. **Shaw Relatedness Removal:** Rút các khách hàng có mức độ tương đồng cao với một khách hàng hạt nhân $r$:
-   $$\mathcal{R}(i, j) = \phi \cdot \frac{d(i, j)}{\max d} + \chi \cdot \frac{|q_i - q_j|}{\max q}$$
-   Với trọng số $\phi = 0.8, \chi = 0.2$. Cơ chế này bóc tách toàn bộ một cụm địa lý đang bị phân bổ sai tuyến.
-3. **Route-Squeeze Removal:** Chọn tuyến có tổng tải trọng nhỏ nhất trong mạng lưới và rút toàn bộ khách hàng trên tuyến đó vào tập $\mathcal{D}$, giải phóng hoàn toàn 1 xe.
+
+1. **Worst-Cost Removal:** Tính toán chi phí tiết kiệm cục bộ khi loại bỏ khách hàng $v_i$ ra khỏi tuyến hiện tại:
+   $$\Delta \text{Saving}(v_i) = d\big(\text{pred}(v_i), v_i\big) + d\big(v_i, \text{succ}(v_i)\big) - d\big(\text{pred}(v_i), \text{succ}(v_i)\big)$$
+   Sắp xếp giảm dần theo $\Delta \text{Saving}(v_i)$, ưu tiên loại bỏ các khách hàng làm tuyến bị gấp khúc hoặc đi vòng xa nhất.
+
+2. **Shaw Relatedness Removal:** Rút các khách hàng có mức độ tương đồng địa lý và nhu cầu cao với một khách hàng hạt nhân $r \in V_C$:
+   $$\mathcal{R}(i, j) = \phi \cdot \frac{d(i, j)}{\max_{(u, v)} d(u, v)} + \chi \cdot \frac{|q_i - q_j|}{\max_k q_k} + \psi \cdot \Big( 1 - \mathbf{1}\big[R(i) = R(j)\big] \Big)$$
+   Với bộ trọng số chuẩn hóa: $\phi = 0.8, \; \chi = 0.1, \; \psi = 0.1$. Cơ chế này giúp bóc tách toàn bộ một cụm không gian đang bị phân mảnh giữa các xe.
+
+3. **Route-Squeeze Removal:** Xác định tuyến có tổng tải trọng nhỏ nhất:
+   $$R^* = \arg\min_{R_k \in \mathcal{R}} \text{Load}(R_k)$$
+   Rút toàn bộ khách hàng trên $R^*$ vào tập phá hủy $\mathcal{D}$, giải phóng hoàn toàn phương tiện này nhằm đưa $|\mathcal{R}|$ về sát $K_{\min}$.
 
 #### B. Các Cơ Chế Tái Tạo (Repair Mechanisms)
-1. **Greedy Best Insertion:** Lần lượt lấy từng khách hàng trong $\mathcal{D}$ và chèn vào vị trí có chi phí gia tăng $\Delta C$ nhỏ nhất trên toàn mạng mà vẫn thỏa mãn $\le Q$.
-2. **Regret-2 Insertion:** Tính toán độ chênh lệch chi phí giữa vị trí chèn tốt nhất (thứ 1) và vị trí chèn tốt nhì (thứ 2):
-   $$\Delta_{\text{regret}}(i) = \Delta C_i^{(2)} - \Delta C_i^{(1)}$$
-   Khách hàng có $\Delta_{\text{regret}}$ lớn nhất (tức nếu không chèn ngay vào vị trí tốt nhất thì sẽ phải chịu thiệt hại rất nặng ở vị trí khác) sẽ được ưu tiên chèn trước.
-3. **2-opt Polish:** Sau khi tái chèn bằng Regret-2, tự động chạy một lượt quét nhanh 2-opt trên các tuyến vừa được chỉnh sửa để nắn thẳng các cạnh bị chéo.
+
+1. **Greedy Best Insertion:** Với mỗi khách hàng $v_i \in \mathcal{D}$, duyệt toàn bộ các vị trí chèn khả thi $p = (R_k, \text{pos})$ thỏa mãn $\text{Load}(R_k) + q_{v_i} \le Q$, chọn vị trí có độ tăng cự ly nhỏ nhất:
+   $$p^*(v_i) = \arg\min_{p} \Delta \mathcal{C}(v_i, p)$$
+
+2. **Regret-2 Insertion:** Tính toán thiệt hại cơ hội giữa vị trí chèn tối ưu nhất (thứ 1) và vị trí chèn tốt thứ nhì (thứ 2):
+   $$\Delta_{\text{regret}}(v_i) = \Delta \mathcal{C}^{(2)}(v_i) - \Delta \mathcal{C}^{(1)}(v_i) = \min_{p \ne p_1^*} \Delta \mathcal{C}(v_i, p) - \min_p \Delta \mathcal{C}(v_i, p)$$
+   Khách hàng có độ ân hận lớn nhất sẽ được ưu tiên chèn trước:
+   $$v^* = \arg\max_{v_i \in \mathcal{D}} \Delta_{\text{regret}}(v_i)$$
+
+3. **2-opt Polish:** Sau khi tái chèn bằng Regret-2, tự động thực thi một lượt quét nhanh 2-opt trên các tuyến vừa có khách hàng chèn vào để khử triệt để các giao cắt hình học.
 
 #### C. Bảng Phối Hợp 6 Vĩ Toán Tử (6 Macro Actions Suite)
+
 | Action ID | Tên Vĩ Toán Tử | Cơ chế Phá hủy (Destroy) | Cơ chế Tái tạo (Repair) | Tinh chỉnh Cục bộ |
 | :---: | :--- | :--- | :--- | :---: |
 | **`0`** | `Worst-Greedy` | Worst-Cost Removal | Greedy Best Insertion | Không |
@@ -340,36 +415,70 @@ Tại mỗi bước, tác tử Neural LNS phá hủy một tập con $\mathcal{D
 
 ---
 
-### 6.1. Phương Trình Cập Nhật Double Deep Q-Learning
-Thuật toán Q-Learning chuẩn thường gặp hiện tượng thiên kiến thổi phồng giá trị (Overestimation Bias) do sử dụng cùng một bộ tham số để vừa chọn vừa đánh giá hành động. Hệ thống MP-MOTO-CVRP áp dụng **Double DQN (DDQN)** với 2 mạng nơ-ron tách biệt: mạng chính $\theta$ (Policy Network) và mạng mục tiêu $\theta^-$ (Target Network):
+### 6.1. Phương Trình Cập Nhật Double Deep Q-Learning & Hàm Mất Mát
 
-$$Y_t^{\text{DoubleQ}} = r_t + \gamma \cdot Q\left(s_{t+1}, \; \arg\max_{a'} Q(s_{t+1}, a'; \theta); \; \theta^-\right)$$
+Nhằm loại bỏ hiện tượng thổi phồng giá trị kỳ vọng (Overestimation Bias), hệ thống áp dụng thuật toán **Double DQN (DDQN)** với hai bộ tham số tách biệt: mạng đánh giá hành động $\theta$ (Online Policy Network) và mạng định lượng mục tiêu $\theta^-$ (Target Network):
 
-Hàm mất mát Huber Loss được tối ưu hóa bằng Adam Optimizer:
+$$Y_t^{\text{DoubleQ}} = r_t + \gamma \cdot Q\left(s_{t+1}, \; \arg\max_{a' \in \mathcal{A}} Q(s_{t+1}, a'; \theta); \; \theta^-\right)$$
 
-$$\mathcal{L}(\theta) = \mathbb{E}\left[ \text{Huber}\left( Y_t^{\text{DoubleQ}} - Q(s_t, a_t; \theta) \right) \right]$$
+Trong đó:
+- $r_t$ là phần thưởng định lượng bước lặp:
+  $$r_t = \begin{cases} \dfrac{\mathcal{C}_t - \mathcal{C}_{t+1}}{\mathcal{C}_{\text{init}}} \times 100 & \text{khi } \mathcal{C}_{t+1} < \mathcal{C}_t \\[6pt] -0.05 & \text{khi } \mathcal{C}_{t+1} \ge \mathcal{C}_t \end{cases}$$
+- $\gamma = 0.99$ là hệ số chiết khấu tương lai.
+
+Hàm mất mát Huber Loss mượt mà giúp huấn luyện ổn định trước các biến thiên đột ngột:
+
+$$\mathcal{L}(\theta) = \frac{1}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \ell_\delta\left( Y_i^{\text{DoubleQ}} - Q(s_i, a_i; \theta) \right)$$
+
+$$\ell_\delta(e) = \begin{cases} \dfrac{1}{2} e^2 & \text{khi } |e| \le \delta \\[6pt] \delta \left(|e| - \dfrac{1}{2}\delta\right) & \text{khi } |e| > \delta \end{cases}, \quad (\delta = 1.0)$$
+
+---
 
 ### 6.2. Cơ Chế Lọc Hành Động Khả Thi (Action Masking)
-Khi ở trạng thái $s_t$, môi trường xây dựng vector nhị phân $\mathbf{m}_t \in \{0, 1\}^A$.
-- Nếu số tuyến đường $|\mathcal{R}| < 2$, các hành động liên tuyến (`inter-relocate`, `inter-swap`, `Route-Squeeze`) bị gắn $m_t[a] = 0$.
-- Khi đưa qua mạng nơ-ron, mặt nạ được áp dụng theo công thức:
-  $$\widetilde{Q}(s, a) = \begin{cases} Q(s, a) & \text{nếu } m_t[a] = 1 \\ -\infty & \text{nếu } m_t[a] = 0 \end{cases}$$
-- Tác tử hành động theo chính sách suy luận: $a_t^* = \arg\max_a \widetilde{Q}(s, a)$, bảo đảm $100\%$ không bao giờ chọn hành động vô nghĩa.
+
+Trước khi tính toán suy luận mạng nơ-ron, môi trường sinh vector mặt nạ nhị phân $\mathbf{m}_t \in \{0, 1\}^{|\mathcal{A}|}$:
+- Nếu số tuyến $|\mathcal{R}| < 2$, các hành động liên tuyến (`inter-relocate`, `inter-swap`, `Route-Squeeze`) bị khóa: $m_t[a] = 0$.
+- Mặt nạ được áp dụng trực tiếp lên vector $Q$-values:
+
+$$\widetilde{Q}(s_t, a) = \begin{cases} Q(s_t, a; \theta) & \text{khi } m_t[a] = 1 \\[4pt] -\infty & \text{khi } m_t[a] = 0 \end{cases}$$
+
+Chính sách hành động suy luận (Greedy Execution Policy):
+
+$$a_t^* = \arg\max_{a \in \mathcal{A}} \widetilde{Q}(s_t, a)$$
+
+Bảo đảm $100\%$ không bao giờ chọn toán tử vi phạm cấu trúc bài toán.
+
+---
 
 ### 6.3. Cơ Chế Khống Chế Cứng Đội Xe (Hard Fleet Cap: $K_{\text{used}} \le K$)
-Khắc phục hiện tượng phân mảnh tải trọng của Clarke-Wright khiến sinh thừa xe ($8/7$ xe):
+
+Khắc phục triệt để hiện tượng phân mảnh tải trọng làm sinh thừa xe ($8/7$ xe):
 - **Thuật toán Route Consolidation:**
-  1. Nếu $|\mathcal{R}| > K$, sắp xếp các tuyến theo tổng tải tăng dần: $\text{Load}(R_1) \le \text{Load}(R_2) \le \dots \le \text{Load}(R_m)$.
-  2. Rút toàn bộ khách hàng khỏi tuyến nhẹ nhất $R_1$.
-  3. Phân bổ các khách hàng này vào $m-1$ tuyến còn lại bằng phương pháp **Regret-2 Insertion**, chỉ chấp nhận các vị trí chèn có $\text{Load} \le Q$.
-  4. Lặp lại cho đến khi $|\mathcal{R}| \le K$. Nếu không thể gom được nữa mà không vượt $Q$, Cổng Feasibility Gate sẽ báo lỗi trước bài toán.
+  1. Khi $|\mathcal{R}| > K$, sắp xếp các tuyến theo tổng tải tăng dần:
+     $$\text{Load}(R_1) \le \text{Load}(R_2) \le \dots \le \text{Load}(R_m)$$
+  2. Giải thể toàn bộ khách hàng khỏi tuyến nhẹ nhất $R_1$.
+  3. Phân bổ các khách hàng này vào $m-1$ tuyến còn lại bằng phương pháp **Regret-2 Insertion**, chỉ chấp nhận các vị trí chèn thỏa mãn:
+     $$\text{Load}(R_k) + q_v \le Q$$
+  4. Lặp lại cho đến khi $|\mathcal{R}| \le K$.
 - **Cam kết:** Nghiệm xuất xưởng luôn thỏa mãn $K_{\text{used}} \le K$.
 
+---
+
 ### 6.4. Bốn Quy Tắc Bất Biến Cốt Lõi (`AGENTS.md`)
-1. **BẢO TOÀN TẢI TRỌNG (Feasibility Invariant):** Mọi tuyến xe $r$ bắt buộc có $\sum_{i \in r} q_i \le Q$. Mô-đun `ConstraintValidatorAgent` thẩm định độc lập sau mỗi bước.
-2. **PHỤC VỤ DUY NHẤT (Uniqueness Invariant):** Mỗi khách hàng $1 \dots n$ xuất hiện đúng một lần duy nhất trong toàn bộ mạng lưới tuyến.
-3. **KHÉP KÍN DEPOT (Cycle Closure Invariant):** Mọi tuyến đường luôn bắt đầu và kết thúc tại Depot $0$ ($0 \to v_1 \dots v_p \to 0$).
-4. **TRUY NGUYÊN & TRUNG THỰC KHOA HỌC (Scientific Honesty Invariant):** Đo đạc khách quan, báo cáo đúng số liệu thực tế, giải thích nguyên nhân khoa học của từng mô hình mà không ngụy tạo kết quả.
+
+1. **BẢO TOÀN TẢI TRỌNG (Feasibility Invariant):**
+   $$\sum_{i \in R_k} q_i \le Q, \quad \forall R_k \in \mathcal{R}$$
+   Tác tử `ConstraintValidatorAgent` độc lập tái thẩm định $100\%$ sau mỗi bước.
+
+2. **PHỤC VỤ DUY NHẤT (Uniqueness Invariant):**
+   $$\sum_{k=1}^{|\mathcal{R}|} \mathbf{1}[i \in R_k] = 1, \quad \forall i \in V_C$$
+
+3. **KHÉP KÍN DEPOT (Cycle Closure Invariant):**
+   Mọi tuyến xe luôn bắt đầu và kết thúc tại Depot $0$:
+   $$R_k = (0 \to v_{k,1} \to v_{k,2} \to \dots \to v_{k,p} \to 0)$$
+
+4. **TRUY NGUYÊN & TRUNG THỰC KHOA HỌC (Scientific Honesty Invariant):**
+   Số liệu thực nghiệm phản ánh đúng thực tế, đối chiếu công bằng giữa DRL và Heuristic.
 
 ---
 
