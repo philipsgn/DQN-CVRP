@@ -7,6 +7,7 @@
 ---
 
 ## MỤC LỤC TỔNG QUAN
+- [BẢNG TRA CỨU KÝ HIỆU TOÁN HỌC & CẨM NANG PHẢN BIỆN (DEFENSE CHEAT SHEET)](#bảng-tra-cứu-ký-hiệu-toán-học--cẩm-nang-phản-biện-defense-cheat-sheet)
 - [PHẦN I: THÔNG TIN DỰ ÁN & ĐẶT VẤN ĐỀ LOGISTICS XE MÁY TP.HCM](#phần-i-thông-tin-dự-án--đặt-vấn-đề-logistics-xe-máy-tphcm)
 - [PHẦN II: KỊCH BẢN THUYẾT TRÌNH & TRÌNH DIỄN THỰC NGHIỆM (TALK TRACK)](#phần-ii-kịch-bản-thuyết-trình--trình-diễn-thực-nghiệm-talk-track)
 - [PHẦN III: PHÂN TÍCH CHUYÊN SÂU TỪNG MÔ HÌNH GIẢI THUẬT (MODEL DEEP-DIVE)](#phần-iii-phân-tích-chuyên-sâu-từng-mô-hình-giải-thuật-model-deep-dive)
@@ -15,6 +16,98 @@
 - [PHẦN VI: CHÍNH SÁCH (POLICY), BỘ LỌC VÀ CÁC QUY TẮC BẤT BIẾN (RULES & INVARIANTS)](#phần-vi-chính-sách-policy-bộ-lọc-và-các-quy-tắc-bất-biến-rules--invariants)
 - [PHẦN VII: KIẾN TRÚC ĐA TÁC TỬ & ĐƯỜNG ĐI PHỐI HỢP CỦA CÁC AGENTS](#phần-vii-kiến-trúc-đa-tác-tử--đường-đi-phối-hợp-của-các-agents)
 - [PHẦN VIII: TỔNG HỢP SỐ LIỆU ĐỊNH LƯỢNG THEO TỪNG PHASE & BỘ CÂU HỎI PHẢN BIỆN HỘI ĐỒNG (DEFENSE Q&A)](#phần-viii-tổng-hợp-số-liệu-định-lượng-theo-từng-phase--bộ-câu-hỏi-phản-biện-hội-đồng-defense-qa)
+
+---
+
+## BẢNG TRA CỨU KÝ HIỆU TOÁN HỌC & CẨM NANG PHẢN BIỆN (DEFENSE CHEAT SHEET)
+
+> **Mục tiêu cẩm nang:** Trang bị cho người thuyết trình bảng tra cứu nhanh toàn bộ các ký tự toán học, chỉ số định lượng và kịch bản ứng đối tự tin trước các câu hỏi bất chợt của Hội đồng chấm Đồ án / Giảng viên phản biện.
+
+---
+
+### 0.1. Bảng Tra Cứu Toàn Bộ Ký Hiệu Toán Học & Biến Số Hệ Thống
+
+| Ký hiệu | Tên đại lượng | Đơn vị / Miền giá trị | Ý nghĩa thực tế trong hệ thống MP-MOTO-CVRP | Công thức / Ví dụ minh họa |
+| :---: | :--- | :---: | :--- | :--- |
+| **$Q$** | Sức chứa thùng xe (Capacity) | $\text{kg} \in \{40, 50, 60, 80\}$ | Khối lượng hàng tối đa thùng xe máy được phép chở. Không bao giờ được vượt quá $Q$. | Ví dụ: $Q = 50.0\text{ kg}$ (10 kiện $5\text{ kg}$). |
+| **$K$** | Ngân sách đội xe sẵn sàng (Fleet Cap) | Phương tiện $\in [1, 15]$ | Tổng số lượng xe máy khả dụng tại kho trung chuyển. Hệ thống khống chế cứng: $K_{\text{used}} \le K$. | Ví dụ: Kho Bến Thành có $K = 7\text{ xe}$. |
+| **$K_{\text{used}}$** | Số xe thực tế điều động | Phương tiện $\le K$ | Số lượng xe máy thực tế được phân công lăn bánh ra đường để phục vụ đơn hàng. | $|\mathcal{R}| = K_{\text{used}} = 7\text{ xe}$. |
+| **$K_{\min}$ / $K_{\text{FFD}}$** | Số xe tối thiểu lý thuyết | Phương tiện | Số lượng xe máy ít nhất cần dùng tính theo thuật toán xếp thùng First-Fit-Decreasing. | $K_{\min} = \lceil \sum q_i / Q \rceil$. |
+| **$\mathcal{R}$** | Tập hợp toàn bộ lộ trình | Tập hợp tuyến | Phương án phân bổ toàn diện của cả đội xe: $\mathcal{R} = \{R_1, R_2, \dots, R_m\}$. | $|\mathcal{R}|$ là số xe đang hoạt động. |
+| **$R_k$** | Tuyến đường của xe máy $k$ | Chu trình khép kín | Lộ trình di chuyển tuần tự của riêng xe thứ $k$, luôn bắt đầu và kết thúc tại kho. | $R_k = (0 \to v_{k,1} \to \dots \to v_{k,p} \to 0)$. |
+| **$0$ / Depot** | Kho hàng xuất phát | Tọa độ GPS | Điểm tập kết hàng hóa trung tâm, nơi xe xuất phát và quay về nạp hàng/kết thúc ca. | Kho Bến Thành: $(10.8415^\circ\text{N}, 106.8098^\circ\text{E})$. |
+| **$V_C$** | Tập hợp khách hàng | Tập hợp đỉnh | Danh sách $n$ cửa hàng bán lẻ cần được giao hàng trong phiên điều phối. | $V_C = \{1, 2, \dots, n\}$. |
+| **$V$** | Tập hợp toàn bộ nút | Tập hợp đỉnh | Toàn bộ đỉnh tham gia bài toán định tuyến, bao gồm cả Depot: $V = \{0\} \cup V_C$. | $|V| = n + 1$ đỉnh. |
+| **$n$ hoặc $N$** | Quy mô bài toán | Số nguyên $\ge 2$ | Tổng số điểm giao hàng (cửa hàng) được chọn trong phiên điều phối hiện tại. | Ví dụ: $N = 24$ điểm giao hàng TP.HCM. |
+| **$q_i$** | Nhu cầu tải trọng điểm $i$ | $\text{kg} \in (0, Q]$ | Khối lượng hàng hóa thực tế mà cửa hàng $i$ yêu cầu giao trong chuyến đi. | $q_i = n_i \cdot w_{\text{pkg}}$ (Ví dụ: 3 kiện $= 15\text{ kg}$). |
+| **$n_i$** | Số kiện hàng tại điểm $i$ | Kiện $\in \mathbb{N}^*$ | Số lượng kiện hàng đặt mua, điều chỉnh được bằng nút `+`/`−` trên Web UI. | $n_i \in [1, \lfloor Q / w_{\text{pkg}} \rfloor]$. |
+| **$w_{\text{pkg}}$** | Trọng lượng quy chuẩn 1 kiện | $\text{kg} = 5.0$ | Trọng lượng chuẩn hóa đồng nhất của một kiện hàng chặng cuối tại TP.HCM. | $w_{\text{pkg}} = 5.0\text{ kg} / \text{kiện}$. |
+| **$\text{Load}(R_k)$** | Tổng tải trọng trên xe $k$ | $\text{kg} \le Q$ | Tổng khối lượng hàng được xếp lên xe $k$. Luôn thỏa mãn $\text{Load}(R_k) \le Q$. | $\text{Load}(R_k) = \sum_{v \in R_k} q_v$. |
+| **$d(u, v)$** | Cự ly tim đường có hướng | Mét / Kilomet | Khoảng cách thực tế ngắn nhất di chuyển từ nút $u$ sang $v$ trên đồ thị OSM (Dijkstra). | Đồ thị có hướng: $d(u, v) \ne d(v, u)$. |
+| **$t(u, v)$** | Thời gian di chuyển | Giây / Phút | Thời gian chạy xe máy thực tế giữa hai nút có xét tốc độ quy chuẩn từng loại đường. | Tra cứu $O(1)$ từ ma trận `time_s.npy`. |
+| **$\mathcal{C}(\mathcal{R})$** | Tổng cự ly toàn đội xe | Kilomet ($\text{km}$) | Tổng quãng đường di chuyển của toàn bộ các xe trong phương án $\mathcal{R}$ (Hàm mục tiêu). | $\mathcal{C}(\mathcal{R}) = \sum_{k=1}^{|\mathcal{R}|} \sum d(u, v)$. |
+| **$\mathcal{C}_{\text{init}}$** | Cự ly nghiệm ban đầu | Kilomet ($\text{km}$) | Tổng cự ly của nghiệm xuất phát tạo bởi thuật toán Clarke-Wright Savings. | Mốc cơ sở (Baseline) để tính % tiết kiệm. |
+| **$\mathcal{C}_{\text{best}}$** | Kỷ lục cự ly tốt nhất | Kilomet ($\text{km}$) | Cự ly ngắn nhất đạt được tính từ đầu vòng lặp tìm kiếm (Best-So-Far Solution). | $\mathcal{C}_{\text{best}} \le \mathcal{C}_t \le \mathcal{C}_{\text{init}}$. |
+| **$s_{ij}$** | Khoản tiết kiệm Savings | Kilomet / Mét | Quãng đường tiết kiệm được khi gộp 2 tuyến riêng rẽ thành 1 tuyến có hướng $(\dots i \to j \dots)$. | $s_{ij} = d(i, 0) + d(0, j) - d(i, j)$. |
+| **$\Delta \mathcal{C}$ / $\Delta C$** | Biên độ cải thiện cự ly | Kilomet / Mét | Mức giảm cự ly khi áp dụng một nước đi toán tử. Nước đi cải thiện khi $\Delta \mathcal{C} > 0$. | $\Delta \mathcal{C} = \mathcal{C}_{\text{current}} - \mathcal{C}_{\text{candidate}}$. |
+| **$s_t$** | Vector trạng thái bước $t$ | $s_t \in \mathbb{R}^{28}$ | Ảnh chụp đặc trưng số học 28 chiều của mạng lưới lộ trình tại bước $t$ (cho DDQN). | Gồm 12 biến toàn cục + 16 biến lịch sử. |
+| **$S_t$** | Vector trạng thái LNS | $S_t \in \mathbb{R}^{36}$ | Vector đặc trưng nâng cấp 36 chiều mở rộng thêm hình học OSM và nhiệt độ Annealing. | Dùng cho mạng Neural LNS ($36 \to 6$). |
+| **$a_t$** | Hành động bước $t$ | $a_t \in \mathcal{A}$ | Quyết định toán tử được tác tử DRL lựa chọn tại bước lặp tìm kiếm thứ $t$. | $a_t \in \{0, 1, 2, 3\}$ hoặc $\{0 \dots 5\}$. |
+| **$\mathbf{m}_t$** | Mặt nạ hành động khả thi | $\mathbf{m}_t \in \{0, 1\}^{|\mathcal{A}|}$ | Bộ lọc nhị phân khóa các toán tử không khả thi (ví dụ khi chỉ có 1 tuyến thì khóa liên tuyến). | $m_t[a] = 0 \implies \widetilde{Q}(s, a) = -\infty$. |
+| **$r_t$** | Phần thưởng Reinforcement | Vô hướng (Scalar) | Giá trị phản hồi môi trường thưởng cho tác tử khi giảm được cự ly lộ trình. | Thưởng $+100 \cdot \Delta C / \mathcal{C}_{\text{init}}$, phạt $-0.05$. |
+| **$Q(s, a)$** | Giá trị hành động (Q-Value) | Vô hướng | Dự đoán của mạng nơ-ron về tổng phần thưởng kỳ vọng tích lũy nếu chọn toán tử $a$. | Hiển thị thành 4 thanh monoline trên Web UI. |
+| **$\theta, \theta^-$** | Tham số mạng nơ-ron | Trọng số PyTorch | $\theta$: Trọng số mạng chính (Online Network); $\theta^-$: Trọng số mạng mục tiêu (Target Network). | Khử thiên kiến thổi phồng giá trị (Overestimation). |
+| **$\gamma$** | Hệ số chiết khấu tương lai | $\gamma = 0.99$ | Trọng số đánh giá mức độ quan trọng của các phần thưởng ở các bước tương lai xa. | Chuẩn mực trong thuật toán Q-Learning. |
+| **$\text{streak}_a$** | Chuỗi bế tắc của toán tử | Số nguyên $\ge 0$ | Số bước liên tiếp toán tử $a$ được kích hoạt nhưng không đem lại cải thiện cự ly. | Chuẩn hóa: $\min(1.0, \text{streak}_a / 30)$. |
+| **$\text{patience}$** | Ngưỡng kiên nhẫn | 30 bước | Số bước tối đa cho phép một toán tử thất bại liên tiếp trước khi Action Mask tạm khóa. | $\text{patience} = 30$. |
+| **$\mathcal{D}$** | Tập phá hủy (Destroy Set) | Tập đỉnh $\subset V_C$ | Tập con gồm $q$ khách hàng bị rút ra khỏi lộ trình để tái phân bổ lại trong Neural LNS. | $|\mathcal{D}| = q$ khách hàng. |
+| **$q$** | Quy mô cụm phá hủy | $q \in [2, \; 0.35N]$ | Số lượng khách hàng bị rút ra đồng thời trong một bước phá hủy - tái tạo của LNS. | Phá hủy từ $20\% - 40\%$ số điểm. |
+| **$\mathcal{R}(i, j)$** | Độ tương đồng Shaw | Vô hướng $\in [0, 1]$ | Thước đo khoảng cách không gian kết hợp chênh lệch tải để gom cụm khách hàng phá hủy. | $\mathcal{R}(i, j) = 0.8 \frac{d}{\max d} + 0.1 \frac{\Delta q}{\max q} + 0.1$. |
+| **$\Delta_{\text{regret}}(i)$** | Giá trị ân hận Regret-2 | Kilomet / Mét | Chênh lệch chi phí giữa vị trí chèn tốt nhất và tốt nhì; quyết định thứ tự ưu tiên tái chèn. | $\Delta_{\text{regret}}(i) = \Delta \mathcal{C}^{(2)}(i) - \Delta \mathcal{C}^{(1)}(i)$. |
+| **$T_t$** | Nhiệt độ Simulated Annealing | Nhiệt độ quy ước | Tham số điều tiết xác suất chấp nhận các nước đi thoái biến để thoát bẫy cực tiểu địa phương. | $T_t = T_0 \cdot \alpha^t$. |
+| **$T_0$** | Nhiệt độ ban đầu | $0.05 \cdot \mathcal{C}_{\text{init}}$ | Mức năng lượng xuất phát của giải thuật luyện kim, tỷ lệ thuận với cự ly bài toán. | Cho phép nhảy nghiệm mạnh ở giai đoạn đầu. |
+| **$\alpha$** | Hệ số làm nguội hình học | $\alpha = 0.985$ | Tỷ lệ giảm dần nhiệt độ sau mỗi bước lặp ($T_{t+1} = \alpha \cdot T_t$) giúp thuật toán hội tụ êm. | Hệ số làm nguội chuẩn khoa học. |
+| **$P(\text{accept})$** | Xác suất chấp nhận nghiệm | $P \in [0, 1]$ | Tỷ lệ chấp nhận một phương án có cự ly tăng tạm thời nhằm tìm kiếm nghiệm toàn cục tốt hơn. | $P = \exp(\Delta \mathcal{C} / T_t)$ khi $\Delta \mathcal{C} < 0$. |
+
+---
+
+### 0.2. Cẩm Nang Ứng Đối Khi Bị Hỏi Bất Chợt (Rapid-Fire Defense Cheat Sheet)
+
+Dưới đây là 7 câu hỏi ngắn điển hình mà các Thầy Cô trong Hội đồng thường hỏi để kiểm tra xem sinh viên có thực sự hiểu bản chất toán học hay không:
+
+#### 1. Hỏi: "$Q$ và $K$ khác nhau ở chỗ nào?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, $Q$ là sức chứa tải trọng tối đa của thùng xe máy (đơn vị $\text{kg}$), còn $K$ là số lượng xe máy tối đa sẵn sàng điều động tại kho (đơn vị chiếc xe)."*
+- **Nói thêm nếu cần:** $Q$ giới hạn trên từng tuyến riêng lẻ ($\sum_{i \in R_k} q_i \le Q$), còn $K$ giới hạn tổng số tuyến của cả mạng lưới ($|\mathcal{R}| \le K$).
+
+#### 2. Hỏi: "Ký hiệu $\mathcal{R}$ hoa và $R_k$ khác nhau thế nào?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, $\mathcal{R}$ (Route Set) là tập hợp toàn bộ các tuyến đường của cả đội xe, còn $R_k$ là hành trình khép kín cụ thể của riêng chiếc xe thứ $k$."*
+- **Nói thêm nếu cần:** $|\mathcal{R}|$ chính là số lượng xe thực tế đang được điều động lăn bánh ($K_{\text{used}}$).
+
+#### 3. Hỏi: "Chỉ số $\Delta \mathcal{C}$ dương hay âm thì thuật toán chấp nhận?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, nhóm định nghĩa $\Delta \mathcal{C} = \mathcal{C}_{\text{hiện\_tại}} - \mathcal{C}_{\text{ứng\_viên}}$, do đó $\Delta \mathcal{C} > 0$ là nước đi làm giảm quãng đường (cải thiện tốt) và luôn được chấp nhận."*
+- **Nói thêm nếu cần:** Trong Greedy thì $\Delta \mathcal{C} \le 0$ bị loại ngay lập tức; còn trong Neural LNS, khi $\Delta \mathcal{C} < 0$ (tăng cự ly nhẹ), thuật toán vẫn có xác suất chấp nhận $P = \exp(\Delta \mathcal{C} / T_t)$ nhờ cơ chế luyện kim Simulated Annealing để thoát bẫy cực trị địa phương.
+
+#### 4. Hỏi: "$F28$ và $F36$ là gì?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, $F28$ và $F36$ là các vector số học biểu diễn trạng thái (Feature Vectors) gồm 28 chiều và 36 chiều cố định, ánh xạ cấu trúc mạng lưới giao thông phức tạp thành các con số chuẩn hóa để mạng nơ-ron DRL đọc hiểu được bất kể số lượng khách hàng $N$ thay đổi."*
+- **Nói thêm nếu cần:** $F28$ dùng cho DDQN chọn 4 toán tử vi mô (gồm 12 biến toàn cục + 16 biến lịch sử toán tử); $F36$ dùng cho Neural LNS nâng cấp thêm các đặc trưng về độ bất đối xứng đường OSM và nhiệt độ luyện kim.
+
+#### 5. Hỏi: "Tại sao ma trận khoảng cách viết là $d(u, v)$ mà không dùng công thức Euclid $\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, khoảng cách Euclid là đường chim bay xuyên qua nhà cửa và sông ngòi, không phản ánh thực tế giao thông; hệ thống của nhóm dùng $d(u, v)$ là khoảng cách thực tế tính bằng thuật toán Dijkstra có hướng trên đồ thị OpenStreetMap TP.HCM, tính chính xác đường một chiều, dải phân cách và ngõ hẻm."*
+- **Nói thêm nếu cần:** Vì vậy đồ thị mang tính bất đối xứng: $d(u, v) \ne d(v, u)$.
+
+#### 6. Hỏi: "Nhu cầu hàng hóa $q_i$ từ giao diện được tính toán ra sao trước khi đưa vào thuật toán?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, tại mỗi cửa hàng $i$, người dùng chọn số kiện hàng $n_i$ bằng nút cộng/trừ; hệ thống tự động nhân với trọng lượng quy chuẩn $w_{\text{pkg}} = 5.0\text{ kg}$ để ra tải trọng thực tế $q_i = n_i \cdot 5.0\text{ kg}$."*
+- **Nói thêm nếu cần:** Giao diện đồng bộ hai chiều thời gian thực: tổng số kiện $\sum n_i$ và tổng tải trọng $\sum q_i$; nếu một điểm vượt quá $Q$ thì nút cộng lập tức bị vô hiệu hóa.
+
+#### 7. Hỏi: "Nhiệt độ $T_t$ và hệ số $\alpha = 0.985$ trong Simulated Annealing có vai trò gì?"
+- **Trả lời nhanh (1 câu):**
+  > *"Dạ thưa Thầy Cô, nhiệt độ $T_t$ kiểm soát mức độ mạo hiểm của thuật toán: ở các bước đầu $T_t$ cao cho phép chấp nhận các nước đi chịu lỗ để nhảy ra khỏi cực tiểu cục bộ; sau đó $T_t$ giảm dần theo cấp số nhân với hệ số làm nguội $\alpha = 0.985$ để thuật toán dần ổn định và hội tụ về nghiệm tối ưu toàn cục."*
 
 ---
 
